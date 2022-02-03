@@ -1,0 +1,12 @@
+INSTALAR ZSH Y REEMPLAZAR A BASH.
+1. sudo pacman -S zsh. <- Instalar zsh.
+2. zsh --version. <- verificar version.
+3. chsh -s $(which zsh) <- establecer zsh como shell.
+4. En este punto es mejor cerrar sesión y volver a iniciar.
+5. echo $SHELL <- Tiene que salir /bin/zsh
+6. Apartir de aquí instalamos un tema a la terminal zsh.
+7. sudo pacman -S curl <- Instalar curl.
+8. sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"   <- Copiar y pegar en la terminal.
+9. nvim ~/.zshrc <- cambiar el tema por half-life.
+10. PLUGINS PARA ZSH COMO AUTOCOMPLETADO, ETC...
+11.ver zshrc de repositorio: github.com/rxtselcode. 
