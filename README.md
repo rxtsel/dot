@@ -984,8 +984,11 @@ y para *alacritty*, [este](#).
 | Software                                                                               | Utilidad                               |
 | -------------------------------------------------------------------------------------- | -------------------------------------- |
 | **[Picom](https://wiki.archlinux.org/index.php/Picom)**                                | Compositor para Xorg                   |
-| **[Mononoki Nerd fonts](https://aur.archlinux.org/packages/nerd-fonts-ubuntu-mono/)** | Nerd Font para iconos                  |
-| **[circle](https://www.gnome-look.org/p/1316887/)**                            | Tema e iconos para GTK                 |
+| **[Mononoki Nerd fonts](https://www.nerdfonts.com/font-downloads)**                    | Nerd Font para iconos                  |
+| **[JetBrains Mono](https://www.jetbrains.com/es-es/lp/mono/)**                         | Fuente Para Qtile                      |
+| **[Tela circle](https://www.gnome-look.org/p/1359276/)**                               | Iconos                                 |
+| **[Dracula Cursor](https://www.pling.com/s/Gnome/p/1669262)**                          | Cursor                                 |
+| **[Orchis](https://www.pling.com/s/Gnome/p/1357889)**                                  | Tema Gtk                               |
 | **[lxappearance](https://www.archlinux.org/packages/community/x86_64/lxappearance/)**  | GUI para cambiar temas                 |
 | **[feh](https://wiki.archlinux.org/index.php/Feh)**                                    | CLI para establecer fondos de pantalla |
 
@@ -998,3 +1001,4 @@ y para *alacritty*, [este](#).
 | **[neovim](https://wiki.archlinux.org/index.php/Neovim)**             | Editor de texto basado en terminal |
 | **[rofi](https://wiki.archlinux.org/index.php/Rofi)**                 | Menú y navegación                  |
 | **[redshift](https://wiki.archlinux.org/index.php/Redshift)**         | Cuida tus ojos                     |
+| **[geary](https://archlinux.org/packages/community/x86_64/geary/)**   | Para enviar y recibir correos      |
