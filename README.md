@@ -1,5 +1,7 @@
 # Arch linux setup
 
+![image](https://user-images.githubusercontent.com/85462420/152466410-d52830c3-cca7-4a9a-af9e-d643590197e3.png)
+
 
 
 ***Enlaces Rápidos***
@@ -900,8 +902,10 @@ cada uno tiene su documentación propia:
 
 # Galería
 
-## [Qtile](#)
-![Qtile](.screenshots/qtile.png)
+## [Qtile](#qtile)
+
+![image](https://user-images.githubusercontent.com/85462420/152466471-eddc86f4-2b81-4826-b040-d18f15cbc7c8.png)
+![image](https://user-images.githubusercontent.com/85462420/152466628-aab55a69-7682-4cfd-9111-ff50998b9e81.png)
 
 
 # Atajos de teclado
