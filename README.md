@@ -2,10 +2,6 @@
 
 
 
-***Idioma***
-- 🇪🇸 Español
-- [🇺🇸 English](#)
-
 ***Enlaces Rápidos***
 - [Qtile](#qtile)
 - [Software que utilizo](#software)
