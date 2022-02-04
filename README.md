@@ -7,7 +7,7 @@
 - [🇺🇸 English](#)
 
 ***Enlaces Rápidos***
-- [Qtile](#Qtile)
+- [Qtile](# Qtile)
 - [Software que utilizo](#software)
 
 # Índice
@@ -38,7 +38,7 @@
   - [Multimedia](#multimedia)
     - [Imágenes](#imágenes)
     - [Vídeo y audio](#vídeo-y-audio)
-  - [Empieza a hackear](#empieza-a-hackear)
+  - [Empieza a tunear](#empieza-a-tunear)
 - [Galería](#galería)
   - [Qtile](#qtile)
   - [Ventanas](#ventanas)
@@ -277,7 +277,8 @@ systemctl enable lightdm
 
 Instalar un entorno de escritorio:
 - Aqui puedes instalar xfce4, gnome... etc. Elige el que tu quieras, en mi caso, Qtile.
-#Qtile
+
+# Qtile
 
 ```bash
 pacman -S qtile
