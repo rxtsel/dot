@@ -10,7 +10,7 @@
 
 - [Resumen](#resumen)
 - [Instalación de Arch Linux](#instalación-de-arch-linux)
-- [Inicio de sesión y gestor de ventanas](#inicio-de-sesión-y-gestor-de-ventanas)
+- [Ventana de login](#instalar-ventana-de-login)
 - [Configuración básica de Qtile](#configuración-básica-de-qtile)
 - [Utilidades básicas del sistema](#utilidades-básicas-del-sistema)
   - [Fondo de pantalla](#fondo-de-pantalla)
@@ -255,7 +255,7 @@ Instalar servidor de display:
 pacman -S xorg xorg-server
 ```
 
-Instalar ventana de login:
+# Instalar ventana de login:
 ```bash
 pacman -S lightdm lightdm-gtk-greeter
 ```
