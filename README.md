@@ -403,7 +403,7 @@ rofi-theme-selector
 
 Eso es todo en cuanto a Qtile, puedes empezar a trastear con su configuración y
 personalizarlo. Écha un vistazo a mi configuración
-[aquí](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile).
+[aquí](#).
 Pero antes de eso recomiendo configurar utilidades básicas como audio, batería,
 montaje de unidades de almacenamiento, etc.
 
@@ -899,11 +899,11 @@ explorador de archivos, etc.
 Aqui tienes una lista con las configuraciones de mis gestores de ventanas,
 cada uno tiene su documentación propia:
 
-- [Qtile](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile/README.es.md)
+- [Qtile](#)
 
 # Galería
 
-## [Qtile](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile)
+## [Qtile](#)
 ![Qtile](.screenshots/qtile.png)
 
 
