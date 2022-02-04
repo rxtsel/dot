@@ -7,7 +7,7 @@
 - [🇺🇸 English](#)
 
 ***Enlaces Rápidos***
-- [Qtile](# Qtile)
+- [Qtile](#qtile)
 - [Software que utilizo](#software)
 
 # Índice
