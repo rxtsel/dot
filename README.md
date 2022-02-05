@@ -179,7 +179,7 @@ nvim /etc/hosts
 ```
 ![image](https://user-images.githubusercontent.com/85462420/152463120-22b7cd94-42d2-40a1-8dda-d3320d9fc1a0.png)
 
-- *Escribe tal cuál la imagen.*
+- *Escribe tal cuál la imagen. sólo reemplaza myhostname por el nombre que pusiste en  tu host*
 
 Ejecutar initframs:
 ```bash
@@ -1001,4 +1001,4 @@ y para *alacritty*, [este](#).
 | **[neovim](https://wiki.archlinux.org/index.php/Neovim)**             | Editor de texto basado en terminal |
 | **[rofi](https://wiki.archlinux.org/index.php/Rofi)**                 | Menú y navegación                  |
 | **[redshift](https://wiki.archlinux.org/index.php/Redshift)**         | Cuida tus ojos                     |
-| **[geary](https://archlinux.org/packages/community/x86_64/geary/)**   | Para enviar y recibir correos      |
+| **[Thunderbird](https://wiki.archlinux.org/title/Thunderbird#Installation)**   | Para enviar y recibir correos      |
