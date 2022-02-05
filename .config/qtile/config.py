@@ -14,12 +14,10 @@ back = "#222222"
 
 keys = [
     #NAVEGACIÓN
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
-    # Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-    # Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
-    # Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
-    # Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-
+    Key([mod], "space", lazy.layout.next(), desc="Mover el foco de ventana"),
+    #CAMBIAR DE GRUPO
+    Key([mod], "period",lazy.screen.next_group(), desc='Mover al suiente grupo'),
+    Key([mod], "comma", lazy.screen.prev_group(), desc='Mover al anterior grupo'),
     #MOVER VENTANAS
     Key([mod], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([mod], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
