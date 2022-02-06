@@ -48,6 +48,10 @@ keys = [
 
     #ROFI
     Key([mod], "m", lazy.spawn('rofi -show drun'), desc="rofi menu"),
+
+    #SCREENSHOT
+    Key([mod], "a", lazy.spawn('flameshot full'), desc="Toma captura"),
+
     #NAVEGADOR
     Key([mod], "b", lazy.spawn('chromium'), desc="Open chromium browser"),
     #EXPLORADOR
