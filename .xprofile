@@ -6,3 +6,4 @@ feh --bg-scale /home/rxtsel/Pictures/arch.png &
 picom &
 flameshot &
 redshift &
+lxqt-powermanagement &
