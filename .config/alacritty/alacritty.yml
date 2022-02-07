@@ -13,12 +13,12 @@ env:
   TERM: alacritty
 
 window:
-  opacity : 0.8
+  opacity : 0.2
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
-  #dimensions:
+  # dimensions:
   #  columns: 0
   #  lines: 0
 
@@ -26,9 +26,9 @@ window:
   #
   # Specified in number of pixels.
   # If the position is not set, the window manager will handle the placement.
-  #position:
-  #  x: 0
-  #  y: 0
+  # position:
+  #   x: 0
+  #   y: 0
 
   # Window padding (changes require restart)
   #
@@ -39,7 +39,7 @@ window:
     y: 0
 
   # Spread additional padding evenly around the terminal content.
-  dynamic_padding: false
+  # dynamic_padding: false
 
   # Window decorations
   #
@@ -114,11 +114,11 @@ font:
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
-    # family: JetBrains Mono
+    
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
-    # family: JetBrains Mono
+    
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -133,11 +133,11 @@ font:
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
-    # family: JetBrains Mono
+    
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
-    # family: JetBrains Mono
+    
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -152,11 +152,11 @@ font:
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
-    # family: JetBrains Mono
+    
     # family: UbuntuMono Nerd Font
     # family: Monofuritalic Nerd Font Mono
     # family: TerminessTTF Nerd Font
-    # family: JetBrains Mono
+    
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -171,11 +171,11 @@ font:
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
-    # family: JetBrains Mono
+    
     # family: UbuntuMono Nerd Font
     # family: Monofuritalic Nerd Font Mono
     # family: TerminessTTF Nerd Font
-    # family: JetBrains Mono
+    
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
