@@ -983,7 +983,7 @@ y para *alacritty*, [este](#).
 
 | Software                                                                               | Utilidad                               |
 | -------------------------------------------------------------------------------------- | -------------------------------------- |
-| **[Picom](https://wiki.archlinux.org/index.php/Picom)**                                | Compositor para Xorg                   |
+| **[Picom](https://github.com/jonaburg/picom)**                                         | Compositor para Xorg                   |
 | **[Mononoki Nerd fonts](https://www.nerdfonts.com/font-downloads)**                    | Nerd Font para iconos                  |
 | **[JetBrains Mono](https://www.jetbrains.com/es-es/lp/mono/)**                         | Fuente Para Qtile                      |
 | **[Tela circle](https://www.gnome-look.org/p/1359276/)**                               | Iconos                                 |
