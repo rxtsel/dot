@@ -598,6 +598,7 @@ cbatticon &
 
 Me gusta tener notificaciones en el escritorio también, para ello tienes que
 instalar
+[**Dunst**](https://wiki.archlinux.org/title/Dunst),
 [**libnotify**](https://wiki.archlinux.org/index.php/Desktop_notifications#Libnotify)
 y [**notification-daemon**](https://www.archlinux.org/packages/community/x86_64/notification-daemon/):
 
@@ -971,7 +972,7 @@ y para *alacritty*, [este](#).
 | **[pavucontrol](https://www.archlinux.org/packages/extra/x86_64/pavucontrol/)**                     | *pulseaudio* GUI                              |
 | **[pamixer](https://www.archlinux.org/packages/community/x86_64/pamixer/)**                         | *pulseaudio* CLI                              |
 | **[brightnessctl](https://www.archlinux.org/packages/community/x86_64/brightnessctl/)**             | Brillo para portátiles                        |
-| **[xinit](https://wiki.archlinux.org/index.php/Xinit)**                                             | Inicia programas antes del gestor de ventanas |
+| **[Dunst](https://wiki.archlinux.org/title/Dunst)**                                                 | Demonio de notificaciones                     |
 | **[libnotify](https://wiki.archlinux.org/index.php/Desktop_notifications)**                         | Notificaciones de escritorio                  |
 | **[notification-daemon](https://www.archlinux.org/packages/community/x86_64/notification-daemon/)** | Autoexplicativo                               |
 | **[udiskie](https://www.archlinux.org/packages/community/any/udiskie/)**                            | Montar discos automáticamente                 |
