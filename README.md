@@ -1,6 +1,7 @@
 # Arch linux setup
 
-![image](https://user-images.githubusercontent.com/85462420/152466410-d52830c3-cca7-4a9a-af9e-d643590197e3.png)
+
+![2022-02-08_23-54](https://user-images.githubusercontent.com/85462420/153124501-184c5032-5d63-4e65-8555-d28113140f6c.png)
 
 
 
@@ -904,8 +905,10 @@ cada uno tiene su documentación propia:
 
 ## [Qtile](#qtile)
 
-![image](https://user-images.githubusercontent.com/85462420/152466471-eddc86f4-2b81-4826-b040-d18f15cbc7c8.png)
-![image](https://user-images.githubusercontent.com/85462420/152466628-aab55a69-7682-4cfd-9111-ff50998b9e81.png)
+![2022-02-08_23-56](https://user-images.githubusercontent.com/85462420/153125236-79f03215-2184-42ed-8d91-68911152c500.png)
+
+
+![2022-02-09_00-01](https://user-images.githubusercontent.com/85462420/153125257-473f70dc-0dde-4e0e-acfe-aa07270b8aa8.png)
 
 
 # Atajos de teclado
