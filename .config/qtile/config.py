@@ -56,7 +56,7 @@ keys = [
         Key([mod], "a", lazy.spawn('flameshot full'), desc="Toma captura"),
 
         #NAVEGADOR
-        Key([mod], "b", lazy.spawn('chromium'), desc="Open chromium browser"),
+        Key([mod], "b", lazy.spawn('google-chrome-stable'), desc="Open chrome browser"),
         #EXPLORADOR
         Key([mod], "e", lazy.spawn('thunar'), desc="Open thunar"),
 
