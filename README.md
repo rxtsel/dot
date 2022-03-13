@@ -1,7 +1,7 @@
 # Arch linux setup
 
 ## bspwm
-![image](https://user-images.githubusercontent.com/85462420/158041220-be80d7d5-0ae3-4cae-af65-30dbe1781f20.png)
+![image](https://user-images.githubusercontent.com/85462420/158041264-df60aa28-7a8f-4941-a195-c557fd5188c1.png)
 
 
 ## qtile
