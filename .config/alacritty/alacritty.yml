@@ -13,7 +13,7 @@ env:
   TERM: alacritty
 
 window:
-  opacity : 0.4
+  opacity : 0.1
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels.
@@ -432,7 +432,7 @@ schemes:
     # Default colors
     primary:
       background: '#292d3e'
-      foreground: '#d0d0d0'
+      foreground: '#dcdcdc'
 
     # Normal colors
     normal:
@@ -447,7 +447,7 @@ schemes:
 
     # Bright colors
     bright:
-      black:   '#434758'
+      black:   '#717171'
       red:     '#ff8b92'
       green:   '#ddffa7'
       yellow:  '#ffe585'
@@ -573,7 +573,7 @@ schemes:
 # *SolarizedDark
 # *TomorrowNight
 
-colors: *DoomOne
+colors: *Palenight
 
 #######################################
 ##       END OF COLOR SCHEMES        ##
@@ -628,7 +628,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Underline
+  style: Beam
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.

@@ -1,0 +1,27 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d     
+        
+bspc config border_width         2
+bspc config window_gap           7
+bspc config focus_follows_pointer	true 
+bspc config split_ratio          0.50
+bspc config borderless_monocle   false 
+bspc config gapless_monocle      true
+bspc config border_radius 	 0
+
+######## CUSTOM ##########
+xsetroot -cursor_name left_ptr &
+
+######## TOOLS ##########
+picom &
+polybar &
+dunst &
+redshift &
+flameshot &
+
+####### WALLPAPERS #######
+feh --bg-scale /home/rxtsel/Pictures/Nordic.png &

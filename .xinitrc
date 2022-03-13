@@ -1,0 +1,2 @@
+setxkbmap latam &
+bspwm

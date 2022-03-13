@@ -1,0 +1,23 @@
+#CORREOS
+1. sudo pacman -S thunderbird
+
+#THEME ICONS (descargar el thema de iconos circle purple de kde-store: https://store.kde.org/p/1359276/)
+1. cd Downloads && sudo mv /usr/share/icons/ 
+2. downloas theme icons Mkos-Big-sur
+
+#FUENTES NECESARIAS
+1. JETBRAINS MONO (NerdFont)
+2. MONONOKI NERD FONTS
+3. SF PRO DISPLAY
+
+#NECESARIO PARA BARRA DE QTILE:
+1. pip install psutil
+
+#AJUSTAR HORA EN DUALBOOT POR ERRORES
+1. timedatectl
+2. si RTC IN LOCAL tz = none entonces ejecutar el siguiente comando
+3. timedatectl set-local-rtc 1
+
+
+#Ejecutar: 
+1. sudo locale.gen

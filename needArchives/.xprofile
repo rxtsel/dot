@@ -2,8 +2,7 @@ setxkbmap latam &
 nm-applet &
 volumeicon &
 cbatticon &
-feh --bg-scale /home/rxtsel/Pictures/redarch.png &
+feh --bg-scale /home/rxtsel/Pictures/* &
 picom &
 flameshot &
 redshift &
-dunst &

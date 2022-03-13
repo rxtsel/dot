@@ -1,10 +1,8 @@
-/** Basic config file **/
-
 configuration {
   show-icons:         true;
-  icon-theme:         "Papirus";
+  icon-theme:         "Mkos-Big-Sur-Night";
   font: "SF Pro Display 20";
-  drun-display-format: "    {name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+  drun-display-format: " {name} [<span weight='light' size='small'><i>({generic})</i></span>]";
   max-history-size: 25;
   width: 50;
   lines: 15;
