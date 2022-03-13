@@ -4,7 +4,7 @@
 
 - [Resumen](#resumen)
 - [Instalación de Arch Linux](#instalación-de-arch-linux)
-- [#Instalando Entorno de escritorio o Gestor de ventana](#Instalando-nuestro-Entorno-de-escritorio-o-gestor-de-ventana)
+- [Instalando Entorno de escritorio o Gestor de ventana](#Instalando-nuestro-Entorno-de-escritorio-o-gestor-de-ventana)
   
 # Resumen
 
