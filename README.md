@@ -4,7 +4,7 @@
 
 - [Resumen](#resumen)
 - [Instalación de Arch Linux](#instalación-de-arch-linux)
-- [Ventana de login](#Instalar-ventana-de-login)
+- [Ventana de login](#Instalar-ventana-de-login:-(opcional))
   
 # Resumen
 
