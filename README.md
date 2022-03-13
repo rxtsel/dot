@@ -4,6 +4,7 @@
 
 - [Resumen](#resumen)
 - [Instalación de Arch Linux](#instalación-de-arch-linux)
+- [#Instalando Entorno de escritorio o Gestor de ventana](#Instalando-nuestro-Entorno-de-escritorio-o-gestor-de-ventana)
   
 # Resumen
 
@@ -214,35 +215,8 @@ Instalar servidor de display:
 ```bash
 pacman -S xorg xorg-server xorg-init
 ```
+En este punto ta tenemos toda la base de arch linux, apartir de aqui ya puedes reiniciar y volver a conectarte a internet para poder instalar un entorno de escritorio o un gestor de ventanas de tu preferencia.
 
-# Instalar ventana de login: (opcional)
-```bash
-pacman -S lightdm lightdm-gtk-greeter
-```
-
-Configurar lightdm:
-```bash
-nvim /etc/lightdm/lightdm.conf
-```
-- ***UBICAR*** *greeter-session=example-gtk-gnome y **REMPLAZAR** por greeter-sesion=lightdm-gtk-greeter*.
-
-Encender lightdm:
-```bash
-systemctl enable lightdm
-```
-
-Instalar un entorno de escritorio:
-- Aqui puedes instalar xfce4, gnome... etc. Elige el que tu quieras.
-por ejemplo:
-```
-bash
-sudo pacman -S bspwm
-sudo pacman -S gnome
-sudo pacman -S xfce4
-sudo pacman -S plasma
-```
-
-Una vez instalado el entorno de escritorio ejecutamos:
 ```bash
 exit
 ```
@@ -255,4 +229,23 @@ umount -a
 reboot
 ```
 
-Y quitamos la usb
+Y quitamos la usb...
+
+Una vez reiniciado verás que te pide un usuario y una contraseña en consola, pero aún NO tienes ningún entorno de escritorio, ni un gestor de ventanas, por lo tanto tendremos que descargalo. Si estás conectado por cable no es necesario que hagas estos pasos porque ya tienes conexión a internet. En caso de conectarse por WIFI, ejecuta los siguientes comandos:
+
+```bash
+# Lista las redes disponibles
+nmcli device wifi list
+# Conéctate a tu red
+nmcli device wifi connect NAME_WIFI password TU_PASSWORD
+```
+
+Listo, ahora prueba la conexión con:
+```bash
+ping 8.8.8.8
+```
+Ya tienes conexión a internet.
+
+# Instalando nuestro Entorno de escritorio o gestor de ventana
+
+Vease [WIKI](#)
