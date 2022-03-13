@@ -243,17 +243,14 @@ sudo pacman -S plasma
 ```
 
 Una vez instalado el entorno de escritorio ejecutamos:
-```
-bash
+```bash
 exit
 ```
 
-```
-bash
+```bash
 umount -a
 ```
 
-```
-bash
+```bash
 reboot
 ```
