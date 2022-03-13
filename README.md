@@ -254,3 +254,5 @@ umount -a
 ```bash
 reboot
 ```
+
+Y quitamos la usb
