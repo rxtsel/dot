@@ -218,7 +218,7 @@ pacman -S vulkan-radeon vulkan-icd-loader mesa
 ---
 Instalar servidor de display:
 ```bash
-pacman -S xorg xorg-server xorg-init
+pacman -S xorg xorg-server xorg-xinit
 ```
 En este punto ta tenemos toda la base de arch linux, apartir de aqui ya puedes reiniciar y volver a conectarte a internet para poder instalar un entorno de escritorio o un gestor de ventanas de tu preferencia.
 
