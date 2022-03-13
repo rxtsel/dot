@@ -253,4 +253,4 @@ Ya tienes conexión a internet.
 
 # Instalando nuestro Entorno de escritorio o gestor de ventana
 
-Vease [WIKI](#)
+Vease [WIKI](https://github.com/rxtsel/Dotfiles/wiki)
