@@ -181,7 +181,7 @@ useradd -m -G wheel rxtsel
 
 Ejecutar: 
 ```bash
-EDITOR=nano visudo
+EDITOR=nvim visudo
 ```
 - ***Descomentar: %wheel ALL=(ALL) ALL y guardar.***
 
@@ -233,3 +233,27 @@ systemctl enable lightdm
 
 Instalar un entorno de escritorio:
 - Aqui puedes instalar xfce4, gnome... etc. Elige el que tu quieras.
+por ejemplo:
+```
+bash
+sudo pacman -S bspwm
+sudo pacman -S gnome
+sudo pacman -S xfce4
+sudo pacman -S plasma
+```
+
+Una vez instalado el entorno de escritorio ejecutamos:
+```
+bash
+exit
+```
+
+```
+bash
+umount -a
+```
+
+```
+bash
+reboot
+```
