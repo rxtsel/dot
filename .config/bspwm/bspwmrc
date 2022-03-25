@@ -22,6 +22,7 @@ polybar &
 dunst &
 redshift &
 flameshot &
+cbatticon &
 
 ####### WALLPAPERS #######
 feh --bg-scale /home/rxtsel/Pictures/Nordic.png &
