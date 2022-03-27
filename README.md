@@ -1,10 +1,10 @@
 # Arch linux setup
 
-## bspwm
+## [bspwm](https://github.com/rxtsel/Dotfiles/wiki/Bspwm)
 ![image](https://user-images.githubusercontent.com/85462420/158041264-df60aa28-7a8f-4941-a195-c557fd5188c1.png)
 
 
-## qtile
+## [qtile](https://github.com/rxtsel/Dotfiles/wiki/Qtile)
 ![2022-02-08_23-54](https://user-images.githubusercontent.com/85462420/153124501-184c5032-5d63-4e65-8555-d28113140f6c.png)
 
 - [Resumen](#resumen)
@@ -253,4 +253,4 @@ Ya tienes conexión a internet.
 
 # Instalando nuestro Entorno de escritorio o gestor de ventana
 
-Vease [WIKI](https://github.com/rxtsel/Dotfiles/wiki)
+Vease [WIKI](https://github.com/rxtsel/Dotfiles/wiki) Para ver cómo instalo bspwm & qtile.
