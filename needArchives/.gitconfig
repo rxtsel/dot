@@ -1,0 +1,14 @@
+[alias]
+	s = status -s
+	a = add
+	c = commit -m
+    p = push
+    b = branch
+    d = diff
+    m = merge
+    pll = pull
+	ch = checkout
+    nb = checkout -b
+	l = log --decorate --all --graph
+	unstage = reset HEAD
+	cl = clone
