@@ -9,7 +9,7 @@ configuration {
   columns: 1;
 }
 
-@theme "/usr/share/rofi/themes/onedark.rasi"
+@theme "/usr/share/rofi/themes/darksel.rasi"
 
 element-icon {
     size:             1.0em ;
