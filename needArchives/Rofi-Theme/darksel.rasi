@@ -1,8 +1,8 @@
 /*
- * ROFI Darksel
+ * ROFI  Darksel
  *
  *
- * Author: Cristhian Melo 
+ * Author: Cristhian Melo
  * User: rxtsel
  *
  */
@@ -16,7 +16,7 @@
   blue:       #6eaafb;
   mangenta:   #d886f3;
   cyan:       #6cdcf7;
-  emphasis:   #50536b;
+  emphasis:   #9bb2c33d;
   text:       #dfdfdf;
   text-alt:   #b2b2b2;
   fg:         #abb2bf;
@@ -31,7 +31,7 @@
 window {
   transparency: "real";
   fullscreen: true;
-  background-color: #282a36d1;
+  background-color: #001b2630;
 }
 
 mainbox {
