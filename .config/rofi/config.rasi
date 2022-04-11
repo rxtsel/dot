@@ -1,6 +1,6 @@
 configuration {
   show-icons:         true;
-  icon-theme:         "Mkos-Big-Sur-Night";
+  icon-theme:         "Darksel-dark";
   font: "SF Pro Display 20";
   drun-display-format: " {name} [<span weight='light' size='small'><i>({generic})</i></span>]";
   max-history-size: 25;
