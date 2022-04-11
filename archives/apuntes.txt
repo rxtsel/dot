@@ -1,10 +1,3 @@
-#CORREOS
-1. sudo pacman -S thunderbird
-
-#THEME ICONS (descargar el thema de iconos circle purple de kde-store: https://store.kde.org/p/1359276/)
-1. cd Downloads && sudo mv /usr/share/icons/ 
-2. downloas theme icons Mkos-Big-sur
-
 #FUENTES NECESARIAS
 1. JETBRAINS MONO (NerdFont)
 2. MONONOKI NERD FONTS
@@ -18,6 +11,11 @@
 2. si RTC IN LOCAL tz = none entonces ejecutar el siguiente comando
 3. timedatectl set-local-rtc 1
 
-
-#Ejecutar: 
+#EJECUTAR: 
 1. sudo locale.gen
+
+#ICONOS: https://drive.google.com/file/d/1nkfizcN8WmQPZY4GPwR1JN6K2sjJJKlH/view?usp=sharing
+1. sudo cp -r Darksel* /usr/share/icons/
+
+#THEME: https://drive.google.com/file/d/15HrJBuMED0I8PKonkp67i8wQB7wm6Ym-/view?usp=sharing
+1. sudo cp -r Darksel /usr/share/themes/

@@ -1,9 +1,3 @@
-[user]
-	name = Cristhian Melo
-	email = cristhixnn@hotmail.com
-[core]
-	editor = nvim
-	autocrlf = input
 [alias]
 	s = status -s
 	a = add
