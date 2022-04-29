@@ -28,12 +28,16 @@ bspc config borderless_monocle true
 xsetroot -cursor_name left_ptr &
 
 ######## TOOLS ##########
+polybar &
 nm-applet &
 picom &
-polybar &
 redshift &
 flameshot &
 dunst &
+xfce4-power-manager &
 
 ####### WALLPAPERS #######
 feh --bg-scale /home/rxtsel/Pictures/Nordic.png &
+
+####### RULES #######
+google-chrome-stable &
