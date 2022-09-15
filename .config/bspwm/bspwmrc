@@ -32,12 +32,12 @@ polybar &
 nm-applet &
 picom &
 redshift &
-flameshot &
 dunst &
 xfce4-power-manager &
 
+####### LOCK SCREEN #######
+pkill xautolock
+xautolock -time 5 -locker "betterlockscreen -l" -notify 30 -notifier "notify-send 'Locker' 'Locking screen in 30 seconds'" -killtime 5 -killer "systemctl suspend" &
+
 ####### WALLPAPERS #######
 feh --bg-scale /home/rxtsel/Pictures/Nordic.png &
-
-####### RULES #######
-google-chrome-stable &

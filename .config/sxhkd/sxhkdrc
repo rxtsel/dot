@@ -6,30 +6,30 @@ super + Return
 super + @space
 	rofi -show drun
 
-#CHROME
+# CHROME
 super + b
     google-chrome-stable
 
-#THUNAR
+# THUNAR
 super + e
-    thunar
+    nautilus
 
 # VOLUMEN
 XF86AudioRaiseVolume
-	pamixer --increase 5
+	pamixer --increase 10
 
 XF86AudioLowerVolume
-	pamixer --decrease 5
+	pamixer --decrease 10
 
 XF86AudioMute
 	pamixer --toggle-mute
 
 # BRILLO
 XF86MonBrightnessUp
-	brightnessctl set 5%+
+	brightnessctl set 10%+
 
 XF86MonBrightnessDown	
-	brightnessctl set 5%-
+	brightnessctl set 10%-
 
 # FLAMESHOOT
 super + shift + s
@@ -50,6 +50,18 @@ super + {_,shift + }w
 # ALTERNAR VENTANA MAX O COLUMN
 super + m
 	bspc desktop -l next
+
+# LOCK SCREEN 
+super + ctrl + x
+  betterlockscreen -l dim
+
+# OPTION SHUTDOWN AND MORE 
+super + shift + l
+  /bin/bash /home/rxtsel/.config/rofi/scripts/power.sh
+
+# SEARCH 
+super + shift + f
+  /bin/bash /home/rxtsel/.config/rofi/scripts/search.sh
 
 # # send the newest marked node to the newest preselected node
 # super + y
