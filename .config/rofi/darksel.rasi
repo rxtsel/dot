@@ -80,7 +80,7 @@ element urgent, element selected urgent {
 }
 
 element active, element selected active {
-  text-color: @purple;
+  text-color: @blue;
 }
 
 message {
