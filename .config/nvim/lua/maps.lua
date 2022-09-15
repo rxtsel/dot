@@ -20,6 +20,9 @@ keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
 keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 
+-- nvim-tree
+keymap.set("n", "<Space>e", ":NvimTreeToggle<CR>")
+
 -- fast scrolling
 keymap.set("n", "<C-j>", "10<C-e>")
 keymap.set("n", "<C-k>", "10<C-y>")
