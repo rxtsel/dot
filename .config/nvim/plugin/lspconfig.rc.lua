@@ -52,3 +52,8 @@ nvim_lsp.emmet_ls.setup({
     },
   }
 })
+
+nvim_lsp.astro.setup {
+  filetypes = { "astro" },
+  cmd = { "astro-ls", "--stdio" }
+}

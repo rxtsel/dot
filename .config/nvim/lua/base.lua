@@ -43,3 +43,7 @@ vim.opt.formatoptions:append { 'r' }
 
 -- Disable autocomments
 vim.cmd [[autocmd BufWinEnter * :set formatoptions-=c formatoptions-=r formatoptions-=o]]
+
+-- Support to Astro
+vim.g.astro_typescript = 'enable'
+vim.g.astro_stylus = 'enable'

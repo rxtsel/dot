@@ -1,3 +1,4 @@
+require "term"
 local keymap = vim.keymap
 vim.cmd("imap jj <Esc>", { silent = true })
 
@@ -32,7 +33,8 @@ keymap.set("n", "<C-h>", "20h")
 -- open term
 keymap.set('t', 'jj', '<C-\\><C-n>', { silent = true })
 keymap.set('t', '<Esc>', '<C-\\><C-n>', { silent = true })
-keymap.set('n', '<Space>ñ', '::belowright split | resize 8 | term<CR>i')
+--keymap.set('n', '<Space>ñ', '::belowright split | resize 8 | term<CR>i')
+keymap.set({ 'n', 't' }, '<Space>ñ', ToggleTerminal)
 
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')

@@ -52,6 +52,7 @@ cmp.setup({
     { name = 'buffer' },
     { name = 'luasnip' },
     { name = 'path' },
+    { name = 'cmp_tabnine' }
   }),
   formatting = {
     format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
