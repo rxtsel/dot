@@ -33,3 +33,21 @@ sudo cp -r Darksel /usr/share/themes/
 ### LOCKSCREEN FOR TWM
 
 [betterlockscreen](https://github.com/betterlockscreen/betterlockscreen)
+
+### ACTIVAR TOUCHPAD Y DESPLAZAMIENTO NATURAL
+```
+sudo pacman -S xf86-input-libinput
+
+cd /etc/X11/xorg.conf.d
+
+sudo nvim 30-touchpad.conf 
+```
+
+```shell
+Section "Inputclass"
+	Identifier "devname"
+	Driver "libinput"
+	Option "Tapping" "on"
+	Option "NaturalScrolling" "true"
+EndSection
+```
