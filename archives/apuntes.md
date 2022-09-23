@@ -51,3 +51,12 @@ Section "Inputclass"
 	Option "NaturalScrolling" "true"
 EndSection
 ```
+
+### ENABLE BLUETOOTH
+```
+sudo pacman -S bluez bluez-utils blueberry
+
+systemctl enable bluetooth.service
+
+reboot
+```
