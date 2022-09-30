@@ -60,3 +60,8 @@ systemctl enable bluetooth.service
 
 reboot
 ```
+
+### SUPPORT MINIATURE PICTURES
+```shell
+yay -Sy ffmpegthumbnailer tumbler tumbler-extra-thumbnailers
+```
