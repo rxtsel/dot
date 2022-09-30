@@ -74,3 +74,22 @@ Go to hidden and check this:
 - [x] Start thunderbird when birdtray starts.
 - [x] Hide/show thunderbird window when click on the system tray icon. 
 - [x] Hide thunderbird window when minimized. 
+
+### Hide grub unless the shift key is pressed:
+
+Edit the file /etc/default/grub and put at the end of the lines [this](https://gist.githubusercontent.com/anonymous/8eb2019db2e278ba99be/raw/257f15100fd46aeeb8e33a7629b209d0a14b9975/gistfile1.sh):
+```shell
+GRUB_FORCE_HIDDEN_MENU="true"
+```
+Create this file 31_hold_shift and paste into it [this]()
+```shell
+sudo nvim /etc/grub.d/31_hold_shift
+```
+Give permissions and update grub:
+````shell
+sudo chmod a+x /etc/grub.d/31_hold_shift
+
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+
