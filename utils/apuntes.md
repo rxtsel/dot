@@ -17,7 +17,7 @@ pacman -Syu --needed noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-dejavu ttf-l
 
 ### EJECUTAR: 
 ```shell
-sudo locale.gen
+sudo locale-gen
 ```
 
 ### [ICONOS](https://drive.google.com/file/d/1nkfizcN8WmQPZY4GPwR1JN6K2sjJJKlH/view?usp=sharing)
