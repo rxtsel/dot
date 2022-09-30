@@ -65,3 +65,12 @@ reboot
 ```shell
 yay -Sy ffmpegthumbnailer tumbler tumbler-extra-thumbnailers
 ```
+
+### thunderbird on the system tray icon.
+```shell
+yay -S birdtray
+```
+Go to hidden and check this:
+- [x] Start thunderbird when birdtray starts.
+- [x] Hide/show thunderbird window when click on the system tray icon. 
+- [x] Hide thunderbird window when minimized. 
