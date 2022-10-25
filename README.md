@@ -125,19 +125,19 @@ Editar localización:
 ```bash
 nvim /etc/locale.gen
 ```
- - *Descomentar: **es_CO.UTF-8 UTF-8**.*
+ - *Ubicar la linea que contenga: **es_CO.UTF-8*** y descomentarla.
 
 Crear locale.conf:
 ```bash
 nvim /etc/locale.conf
 ```
-- *Escribir**LANG=es_CO.UTF-8**.*
+- *Escribir: **LANG=es_CO.UTF-8***
 
 Configurar teclado:
 ```bash
 nvim /etc/vconsole.conf
 ```
-- *Escribir **KEYMAP=la-latin1***
+- *Escribir: **KEYMAP=la-latin1***
 
 Configurar hostname:
 ```bash
