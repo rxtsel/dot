@@ -87,7 +87,7 @@ Primero crear una montura para UEFI:
 mkdir /mnt/efi
 ```
 ```bash
-mount /dev/aqui_EFI_partition /mnt/efi       <-para UEFI
+mount /dev/aqui_UEFI_partition /mnt/efi       <-para UEFI
 mount /dev/aqui_ROOT_partition /mnt       <-para ROOT
 swapon /dev/aqui_SWAP_partition              <-para SWAP
 ```
