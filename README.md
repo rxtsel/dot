@@ -45,17 +45,24 @@ Actualizar reloj:
 timedatectl set-ntp true
 ```
 
-Ver todas las particiones de disco:
-
-```bash
-lsblk
-```
-
 Particionar los discos:
 
 ```bash
 cfdisk
 ```
+---
+Sí con el comando anterior no aparece tu disco o partición, entonces ejecuta este comando para ver todas las particiones y toma nota de tu partición:
+
+```bash
+lsblk
+```
+
+Entonces ejecutas este comando:
+```bash
+cfdisk /dev/tu_partición_aqui
+```
+---
+
 Crear 3 particiones así:
 
 | CANTIDAD   | TIPO DE PARTICION |
