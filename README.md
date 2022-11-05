@@ -75,19 +75,19 @@ Darle a **write**, y escribir **yes** para guardar.
 Formatear los discos:
 
 ```bash
-mkfs.fat -F32 /dev/aqui_UEFI_partition       <-para UEFI
+mkfs.fat -F32 /dev/aqui_EFI_partition       <-para EFI
 mkfs.ext4 /dev/aqui_ROOT_partition          <-para ROOT
 mkswap /dev/aqui_SWAP_partition            <-para SWAP
 ```
 #### Montar los discos:
 
-Primero crear una montura para UEFI:
+Primero crear una montura para EFI:
 
 ```bash
 mkdir /mnt/efi
 ```
 ```bash
-mount /dev/aqui_UEFI_partition /mnt/efi       <-para UEFI
+mount /dev/aqui_EFI_partition /mnt/efi       <-para EFI
 mount /dev/aqui_ROOT_partition /mnt       <-para ROOT
 swapon /dev/aqui_SWAP_partition              <-para SWAP
 ```
