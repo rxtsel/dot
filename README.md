@@ -67,7 +67,7 @@ Crear 3 particiones así:
 
 | CANTIDAD   | TIPO DE PARTICION |
 | ---------------| -----------------------|
-| **512M** | UEFI           |
+| **512M** | EFI System        |
 | **TUS GB DE RAM** | SWAP (linux swap)         |
 |**RESTO DE GB**| ROOT (linux filesystem) |
 Darle a **write**, y escribir **yes** para guardar.
