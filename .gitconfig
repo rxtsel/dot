@@ -1,13 +1,15 @@
 [alias]
-	s = status -s
+	s = status -sb
 	a = add
 	c = commit -m
-    p = push
-    b = branch
-    d = diff
-    m = merge
-    pll = pull
-    ch = checkout
-    nb = checkout -b
-	l = log --oneline --decorate --all --graph
+	p = push origin
+	aco = !git add -A && git commit -m
+	b = branch
+	d = diff
+	m = merge
+	pll = pull
+	ch = checkout
+	nb = checkout -b
+	l = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
+	llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
 	unstage = reset HEAD
