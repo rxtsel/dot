@@ -1,2 +1,0 @@
-setxkbmap latam &
-bspwm
