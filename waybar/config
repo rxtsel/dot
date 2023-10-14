@@ -1,18 +1,17 @@
 {
-    // General Settings
-
     // Position TOP
-    "layer": "top",
-    "margin-top": 14,
-    "margin-bottom": 0,
+    "position": "top",
+    "margin-top": 2,
+    "margin-bottom": 2,
 
     // Position BOTTOM
     // "position": "bottom",
-    // "margin-top": 0,
     // "margin-bottom": 14,
-    
+    // "margin-top": 0,
+
+     // General Settings
     "layer": "top",
-    "height": 16,
+    "height": 37,
     "margin-left": 0,
     "margin-right": 0,    
     "spacing": 0,
@@ -24,8 +23,8 @@
     "modules-left": [
         "custom/appmenu",
         "custom/wallpaper",
-        "wlr/taskbar",
         "group/quicklinks",
+        "wlr/taskbar",
         "hyprland/window"
     ],
 
@@ -38,7 +37,7 @@
     "modules-right": [
         "pipewire-pulse",
         "bluetooth",
-        "battery", 
+        "battery",
         "group/hardware",
         "custom/cliphist",
         "network",
@@ -47,11 +46,12 @@
     ],
 
     // Group Quicklinks
+      //module "custom/windowsvm"
     "group/quicklinks": {
         "orientation": "horizontal",
         "modules": [
             "custom/filemanager",
-            "custom/chromium",
+            "custom/chatgpt",
          ]
     },
 

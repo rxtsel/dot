@@ -16,4 +16,4 @@ killall waybar
 # ----------------------------------------------------- 
 # Loading the configuration based on the username
 # ----------------------------------------------------- 
-waybar -c ~/Dotfiles/waybar/myconfig & -s ~/Dotfiles/waybar/style.css  
+waybar -c ~/Dotfiles/waybar/config & -s ~/Dotfiles/waybar/style.css  

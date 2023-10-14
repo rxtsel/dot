@@ -36,7 +36,7 @@ npm install -g commitizen cz-conventional-changelog && echo '{ "path": "cz-conve
 
 ### fonts
 ```bash
-sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-dejavu ttf-liberation ttf-font-awesome &&
+sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-dejavu ttf-liberation ttf-font-awesome ttf-bitstream-vera gnu-free-fonts ttf-croscore ttf-droid ttf-ibm-plex ttf-liberation &&
 cd && wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip &&
 sudo unzip CascadiaCode.zip -d /usr/share/fonts/CascadiaCode
 ```
