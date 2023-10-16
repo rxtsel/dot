@@ -44,12 +44,15 @@
   },
 
   // Cliphist
+
   "custom/cliphist": {
-    "format": "",
-    "on-click": "sleep 0.1 && ~/Dotfiles/scripts/cliphist.sh",
-    "on-click-right": "sleep 0.1 && ~/Dotfiles/scripts/cliphist.sh d",
-    "on-click-middle": "sleep 0.1 && ~/Dotfiles/scripts/cliphist.sh w",
-    "tooltip": false
+        "format": "{}",
+        "exec": "echo ; echo 󰅇 clipboard history",
+        "on-click": "sleep 0.1 && ~/Dotfiles/scripts/cliphist.sh c",
+        "on-click-right": "sleep 0.1 && ~/Dotfiles/scripts/cliphist.sh d",
+        "on-click-middle": "sleep 0.1 && ~/Dotfiles/scripts/cliphist.sh w",
+        "interval" : 86400, // once every day
+        "tooltip": true
   },
 
   // Wallpaper
@@ -146,62 +149,70 @@
     "on-click": "alacritty -e htop"
   },
 
-  // Network
   "network": {
-    "format": "{ifname}",
-    "format-wifi": "   {signalStrength}%",
-    "format-ethernet": "  {ipaddr}",
-    "format-disconnected": "", //An empty format will hide the module.
-    "tooltip-format": " {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
-    "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
-    "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50
-  },
+        "format-wifi": "󰤨    {essid}",
+        "format-ethernet": "󱘖   Wired",
+        "tooltip-format": "󱘖   {ipaddr}    {bandwidthUpBytes}    {bandwidthDownBytes}",
+        "format-linked": "󱘖   {ifname} (No IP)",
+        "format-disconnected": "   Disconnected",
+        "format-alt": "󰤨    {signalStrength}%",
+        "interval": 5
+    },
 
-  // Battery
+  // Batery
   "battery": {
     "states": {
-      // "good": 95,
+      "good": 95,
       "warning": 30,
-      "critical": 15
+      "critical": 20
     },
-    "format": "{icon}   {capacity}%",
-    "format-charging": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
-    "format-alt": "{icon}  {time}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
-    "format-icons": [" ", " ", " ", " ", " "]
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
 
   // Pulseaudio
-  "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", " ", " "]
+      "pulseaudio": {
+        "format": "{icon} {volume}",
+        "format-muted": "婢",
+        "on-click": "pavucontrol -t 3",
+        "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -o m",
+        "on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -o i",
+        "on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -o d",
+        "tooltip-format": "{icon} {desc} // {volume}%",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
     },
-    "on-click": "pavucontrol"
-  },
 
-  // Bluetooth
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click": "pavucontrol -t 4",
+        "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -i m",
+        "on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -i i",
+        "on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -i d",
+        "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
+        "scroll-step": 5
+    },
+
   "bluetooth": {
-    "format-disabled": "",
-    "format-off": "",
-    "interval": 30,
-    "on-click": "blueman-manager"
+        "format": "",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": " {num_connections}",
+        "tooltip-format": " {device_alias}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": " {device_alias}"
   },
 
   // Other
