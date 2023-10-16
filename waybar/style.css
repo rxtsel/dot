@@ -8,14 +8,27 @@
  * ----------------------------------------------------- */
 
 * {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   border: none;
   border-radius: 0;
 }
 
 window#waybar {
   border: none;
-  background: @background;
+  margin: 0;
+  padding: 0;
+  background-color: @background;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -26,6 +39,7 @@ window#waybar {
 
 #workspaces {
   background: transparent;
+  transition: all 0.5s ease-in-out;
   border: none;
   margin: 0;
   padding: 0;
@@ -38,8 +52,6 @@ window#waybar {
 }
 
 #workspaces button.active {
-  background-color: transparent;
-  transition: all 0.5s ease-in-out;
   opacity: 1;
   min-width: 30px;
 }

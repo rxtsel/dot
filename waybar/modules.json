@@ -3,13 +3,12 @@
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
-    "format": "{icon}",
+    "format": "{}",
     "format-icons": {
-      "urgent": "󰽢",
-      "active": "󰽢",
-      "default": "󰽢"
-    },
-    "icon-size": 10
+      "urgent": "",
+      "active": "",
+      "default": ""
+    }
   },
 
   "wlr/taskbar": {
