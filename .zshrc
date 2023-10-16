@@ -11,7 +11,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 alias dot="cd ~/Dotfiles"
-alias pro="cd ~/Desktop/proyects"
+alias pro="cd ~/Desktop/Proyects"
 alias zr="source ~/.zshrc"
 alias v="nvim"
 alias vim="nvim"
@@ -22,7 +22,7 @@ alias -s {html,js,css,py,go,lua}="nvim"
 alias clean="cd /var/cache/pacman/pkg/ && sudo rm -rf * && sudo pacman -Scc && yay -Scc && cd ~/ && sudo rm -rf ~/.cache/ && cd"
 alias D="cd ~/Downloads"
 alias t="tmux"
-alias tpro="cd ~/Desktop/proyects && tmux"
+alias tpro="cd ~/Desktop/Proyects && tmux"
 
 # envs
 fpath+=${ZDOTDIR:-~}/.zsh_functions
