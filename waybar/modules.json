@@ -1,21 +1,17 @@
 {
-  // Workspaces
   "hyprland/workspaces": {
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
-    "format": "{}",
+    "format": "{icon}",
     "format-icons": {
-      "urgent": "",
-      "active": "",
-      "default": ""
+      "urgent": "󰽢",
+      "active": "󰽢",
+      "default": "󰽢"
     },
-    "persistent_workspaces": {
-      "*": 5
-    }
+    "icon-size": 10
   },
 
-  // Taskbar
   "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 24,
@@ -33,7 +29,6 @@
     }
   },
 
-  // Hyprland Window
   "hyprland/window": {
     "rewrite": {
       "(.*) - Brave": "$1",
@@ -43,179 +38,116 @@
     "separate-outputs": true
   },
 
-  // Cliphist
-
   "custom/cliphist": {
-        "format": "{}",
-        "exec": "echo ; echo 󰅇 clipboard history",
-        "on-click": "sleep 0.1 && ~/Dotfiles/scripts/cliphist.sh c",
-        "on-click-right": "sleep 0.1 && ~/Dotfiles/scripts/cliphist.sh d",
-        "on-click-middle": "sleep 0.1 && ~/Dotfiles/scripts/cliphist.sh w",
-        "interval" : 86400, // once every day
-        "tooltip": true
+    "format": "󱉧",
+    "exec": "echo ; echo 󰅇 clipboard history",
+    "on-click": "sleep 0.1 && ~/Dotfiles/scripts/cliphist.sh c",
+    "on-click-right": "sleep 0.1 && ~/Dotfiles/scripts/cliphist.sh d",
+    "on-click-middle": "sleep 0.1 && ~/Dotfiles/scripts/cliphist.sh w",
+    "interval": 86400,
+    "icon-size": 24,
+    "tooltip": true
   },
 
-  // Wallpaper
-  "custom/wallpaper": {
-    "format": "",
-    "on-click-right": "~/Dotfiles/scripts/wallpaper-swww.sh",
-    "on-click": "~/Dotfiles/scripts/update-wall.sh",
-    "tooltip": false
-  },
-
-  // Filemanager Launcher
-  "custom/filemanager": {
-    "format": "",
-    "on-click": "~/Dotfiles/scripts/filemanager.sh",
-    "tooltip": false
-  },
-
-  // ChatGPT Launcher
   "custom/chatgpt": {
     "format": "",
     "on-click": "chromium --app=https://chat.openai.com",
     "tooltip": false
   },
 
-  // Rofi Calculator
-  "custom/calculator": {
-    "format": "",
-    "on-click": "~/Dotfiles/scripts/calculator.sh",
-    "tooltip": false
-  },
-
-  // Windows VM
-  //"custom/windowsvm": {
-  //    "format": "",
-  //    "on-click": "~/private/launchvm.sh",
-  //    "tooltip": false
-  //},
-
-  // Rofi Application Launcher
-  "custom/appmenu": {
-    "format": "Apps",
-    "on-click": "~/Dotfiles/scripts/applauncher.sh",
-    "tooltip": false
-  },
-
-  // Power Menu
   "custom/exit": {
     "format": "",
     "on-click": "wlogout",
-    "tooltip": false
+    "tooltip": false,
+    "icon-size": 24
   },
 
-  // Keyboard State
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
-  },
-
-  // System tray
   "tray": {
     "icon-size": 24,
     "spacing": 14
   },
 
-  // Clock
   "clock": {
-    // "timezone": "America/New_York",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}"
+    "format-alt": "{:%Y-%m-%d}",
+    "tooltip": true
   },
 
-  // CPU
   "cpu": {
-    "format": "/ C {usage}% ",
+    "format": "CPU {usage}% ",
     "on-click": "alacritty -e htop"
   },
 
-  // Memory
   "memory": {
-    "format": "/ M {}% ",
-    "on-click": "alacritty -e htop"
-  },
-
-  // Harddisc space used
-  "disk": {
-    "interval": 30,
-    "format": "   {percentage_used}% ",
-    "path": "/",
-    "on-click": "alacritty -e htop"
+    "format": "/ MEM {}% "
   },
 
   "network": {
-        "format-wifi": "󰤨    {essid}",
-        "format-ethernet": "󱘖   Wired",
-        "tooltip-format": "󱘖   {ipaddr}    {bandwidthUpBytes}    {bandwidthDownBytes}",
-        "format-linked": "󱘖   {ifname} (No IP)",
-        "format-disconnected": "   Disconnected",
-        "format-alt": "󰤨    {signalStrength}%",
-        "interval": 5
-    },
+    "format-wifi": "󰤨",
+    "format-ethernet": "󱘖",
+    "tooltip-format": "󰤪   {essid}",
+    "format-linked": "󱘖   {ifname} (No IP)",
+    "format-disconnected": "󰤭",
+    "format-alt": "󰤨    {signalStrength}%",
+    "interval": 5,
+    "icon-size": 24
+  },
 
-  // Batery
   "battery": {
     "states": {
       "good": 95,
       "warning": 30,
       "critical": 20
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{time} {icon}",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format": "{icon}",
+    "format-charging": "󰢞  {capacity}%",
+    "format-plugged": "󰢞  {capacity}%",
+    "format-alt": "{icon} {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "icon-size": 24
   },
 
-  // Pulseaudio
-      "pulseaudio": {
-        "format": "{icon} {volume}",
-        "format-muted": "婢",
-        "on-click": "pavucontrol -t 3",
-        "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -o m",
-        "on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -o i",
-        "on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -o d",
-        "tooltip-format": "{icon} {desc} // {volume}%",
-        "scroll-step": 5,
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        }
-    },
+  "pulseaudio": {
+    "format": "{icon} {volume}",
+    "format-muted": "婢",
+    "on-click": "pavucontrol -t 3",
+    "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -o m",
+    "on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -o i",
+    "on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -o d",
+    "tooltip-format": "{icon} {desc} // {volume}%",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    }
+  },
 
-    "pulseaudio#microphone": {
-        "format": "{format_source}",
-        "format-source": "",
-        "format-source-muted": "",
-        "on-click": "pavucontrol -t 4",
-        "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -i m",
-        "on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -i i",
-        "on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -i d",
-        "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
-        "scroll-step": 5
-    },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "on-click": "pavucontrol -t 4",
+    "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -i m",
+    "on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -i i",
+    "on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -i d",
+    "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
+    "scroll-step": 5
+  },
 
   "bluetooth": {
-        "format": "",
-        "format-disabled": "", // an empty format will hide the module
-        "format-connected": " {num_connections}",
-        "tooltip-format": " {device_alias}",
-        "tooltip-format-connected": "{device_enumerate}",
-        "tooltip-format-enumerate-connected": " {device_alias}"
+    "format": "",
+    "format-disabled": "",
+    "format-connected": " {num_connections}",
+    "tooltip-format": " {device_alias}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": " {device_alias}"
   },
 
-  // Other
   "user": {
     "format": "{user}",
     "interval": 60,

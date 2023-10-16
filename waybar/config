@@ -1,67 +1,42 @@
 {
-    // Position TOP
-    "position": "top",
-    "margin-top": 0,
-    "margin-bottom": 0,
+  "position": "top",
+  "margin-top": 0,
+  "margin-bottom": 0,
 
-    // Position BOTTOM
-    // "position": "bottom",
-    // "margin-bottom": 14,
-    // "margin-top": 0,
+  "layer": "top",
+  "height": 30,
+  "exclusive": true,
+  "mode": "dock",
+  "spacing": 4,
 
-     // General Settings
-    "layer": "top",
-    "height": 37,
-    "margin-left": 0,
-    "margin-right": 0,    
-    "spacing": 0,
+  "include": ["~/Dotfiles/waybar/modules.json"],
 
-    // Load Modules
-    "include": ["~/Dotfiles/waybar/modules.json"],
+  "modules-left": [
+    "hyprland/workspaces",
+    "group/quicklinks"
+  ],
 
-    // Modules Left
-    "modules-left": [
-        "custom/appmenu",
-        "custom/wallpaper",
-        "group/quicklinks",
-        "wlr/taskbar",
-        "hyprland/window"
-    ],
+  "modules-center": [
+    "clock"
+  ],
 
-    // Modules Center
-    "modules-center": [
-        "hyprland/workspaces"
-    ],
+  "modules-right": [
+    "pipewire-pulse",
+    "bluetooth",
+    "group/hardware",
+    "battery",
+    "custom/cliphist",
+    "network",
+    "custom/exit"
+  ],
 
-    // Modules Right    
-    "modules-right": [
-        "pipewire-pulse",
-        "bluetooth",
-        "battery",
-        "group/hardware",
-        "custom/cliphist",
-        "network",
-        "custom/exit",
-        "clock"
-    ],
+  "group/quicklinks": {
+    "orientation": "horizontal",
+    "modules": ["custom/chatgpt"]
+  },
 
-    // Group Quicklinks
-      //module "custom/windowsvm"
-    "group/quicklinks": {
-        "orientation": "horizontal",
-        "modules": [
-            "custom/filemanager",
-            "custom/chatgpt",
-         ]
-    },
-
-    // Group Hardware
-    "group/hardware": {
-        "orientation": "horizontal",
-        "modules": [
-            "disk",
-            "cpu",
-            "memory"
-        ]
-    }
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "memory"]
+  }
 }
