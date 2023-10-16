@@ -1,8 +1,8 @@
 {
     // Position TOP
     "position": "top",
-    "margin-top": 2,
-    "margin-bottom": 2,
+    "margin-top": 0,
+    "margin-bottom": 0,
 
     // Position BOTTOM
     // "position": "bottom",
