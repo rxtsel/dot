@@ -3,8 +3,7 @@ After minimal Arch linux setup, then:
 ### Install dependencies
 
 ```bash
-sudo pacman -S git neovim alacritty neofetch chromium ranger feh brightnessctl udiskie ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent qt5-wayland qt5-wayland grim slurp brightnessctl pamixer cliphist swappy swayidle xautolock lxappearance mpv rofi thunar waybar ark ttf-fira-sans ttf-fira-code ttf-firacode-nerd blueman  bluez bluez-utils ripgrep xsel tmux libsodium pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse gst-plugin-pipewire network-manager-applet pavucontrol rofi-emoji unzip font-manager ripgrep xsel
-
+sudo pacman -S git neovim alacritty neofetch chromium ranger feh brightnessctl udiskie ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent qt5-wayland qt5-wayland grim slurp brightnessctl pamixer cliphist swappy swayidle xautolock lxappearance mpv rofi thunar waybar ark ttf-fira-sans ttf-fira-code ttf-firacode-nerd blueman  bluez bluez-utils ripgrep xsel tmux libsodium pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse gst-plugin-pipewire network-manager-applet pavucontrol rofi-emoji unzip font-manager ripgrep xsel obs-studio discord spotify-launcher
 # yay packages
 yay -S swaylock-effects swww wlogout pywal ffmpegthumbnailer tumbler tumbler-extra-thumbnailers xdg-desktop-portal-hyprland-git gammastep
 ```

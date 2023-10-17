@@ -7,7 +7,13 @@
     "format-icons": {
       "urgent": "",
       "active": "",
-      "default": ""
+      "default": "",
+      "persistent": ""
+    },
+    "persistent_workspaces": {
+      "1": [],
+      "2": ["HDMI-A-1"],
+      "3": ["HDMI-A-1"]
     }
   },
 
@@ -99,8 +105,8 @@
       "critical": 20
     },
     "format": "{icon}",
-    "format-charging": "󰢞  {capacity}%",
-    "format-plugged": "󰢞  {capacity}%",
+    "format-charging": "󰢞",
+    "format-plugged": "󰢞",
     "format-alt": "{icon} {capacity}%",
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "icon-size": 24
