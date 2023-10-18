@@ -12,8 +12,7 @@
     },
     "persistent_workspaces": {
       "1": [],
-      "2": ["HDMI-A-1"],
-      "3": ["HDMI-A-1"]
+      "2": ["HDMI-A-1"]
     }
   },
 
@@ -113,13 +112,12 @@
   },
 
   "pulseaudio": {
-    "format": "{icon} {volume}",
-    "format-muted": "婢",
+    "format": "{icon}",
+    "format-muted": "󰝟",
     "on-click": "pavucontrol -t 3",
-    "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -o m",
-    "on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -o i",
-    "on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -o d",
-    "tooltip-format": "{icon} {desc} // {volume}%",
+    "on-scroll-up": "pamixer -i 5",
+    "on-scroll-down": "pamixer -d 5",
+    "tooltip-format": "{volume}%",
     "scroll-step": 5,
     "format-icons": {
       "headphone": "",
@@ -134,7 +132,7 @@
 
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "format-source": "",
+    "format-source": "",
     "format-source-muted": "",
     "on-click": "pavucontrol -t 4",
     "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -i m",

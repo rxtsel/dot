@@ -21,9 +21,10 @@
   ],
 
   "modules-right": [
-    "pipewire-pulse",
-    "bluetooth",
+    //"bluetooth",
     "group/hardware",
+    "tray",
+    "pulseaudio",
     "battery",
     "custom/cliphist",
     "network",

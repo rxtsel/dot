@@ -148,16 +148,13 @@ window#waybar.empty #window {
  * Pulseaudio
  * ----------------------------------------------------- */
 #pulseaudio {
-  background-color: #ffffff;
-  font-size: 16px;
-  color: @background;
-  border-radius: 15px;
-  opacity: 0.8;
+  background-color: transparent;
+  color: #ffffff;
   min-width: 24px;
 }
 
 #pulseaudio.muted {
-  background-color: @color11;
+  background-color: transparent;
   color: #ffffff;
 }
 
@@ -188,7 +185,6 @@ window#waybar.empty #window {
   background-color: transparent;
   font-size: 16px;
   color: #ffffff;
-  border-radius: 15px;
   min-width: 24px;
 }
 
@@ -236,7 +232,8 @@ window#waybar.empty #window {
  * Tray
  * ----------------------------------------------------- */
 #tray {
-  background-color: #2980b9;
+  background-color: transparent;
+  min-width: 24px;
 }
 
 #tray > .passive {
