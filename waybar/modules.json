@@ -11,7 +11,7 @@
       "persistent": ""
     },
     "persistent_workspaces": {
-      "1": [],
+      "1": ["eDP-1"],
       "2": ["HDMI-A-1"]
     }
   },
@@ -44,7 +44,7 @@
 
   "custom/cliphist": {
     "format": "󱉧",
-    "exec": "echo ; echo 󰅇 clipboard history",
+    "exec": "echo ; echo 󰅇 Clipboard history",
     "on-click": "sleep 0.1 && ~/Dotfiles/scripts/cliphist.sh c",
     "on-click-right": "sleep 0.1 && ~/Dotfiles/scripts/cliphist.sh d",
     "on-click-middle": "sleep 0.1 && ~/Dotfiles/scripts/cliphist.sh w",
@@ -56,7 +56,8 @@
   "custom/chatgpt": {
     "format": "",
     "on-click": "chromium --app=https://chat.openai.com",
-    "tooltip": false
+    "tooltip": false,
+    "icon-size": 24
   },
 
   "custom/exit": {
@@ -72,8 +73,9 @@
   },
 
   "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%d-%m-%Y}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}",
     "tooltip": true
   },
 
@@ -83,17 +85,20 @@
   },
 
   "memory": {
-    "format": "/ MEM {}% "
+    "format": "/ MEM {}% ",
+    "tooltip": true,
+    "tooltip-format": "Memory usage: {usage}%\n{used}/{total} {unit} used\n{available} {unit} available"
   },
 
   "network": {
     "format-wifi": "󰤨",
     "format-ethernet": "󱘖",
-    "tooltip-format": "󰤪   {essid}",
+    "tooltip-format": "󰤪    {essid}",
     "format-linked": "󱘖   {ifname} (No IP)",
     "format-disconnected": "󰤭",
     "format-alt": "󰤨    {signalStrength}%",
     "interval": 5,
+    "tooltip": true,
     "icon-size": 24
   },
 
@@ -127,7 +132,8 @@
       "portable": "",
       "car": "",
       "default": ["", "", ""]
-    }
+    },
+    "icon-size": 24
   },
 
   "pulseaudio#microphone": {
@@ -139,7 +145,8 @@
     "on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -i i",
     "on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -i d",
     "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
-    "scroll-step": 5
+    "scroll-step": 5,
+    "icon-size": 24
   },
 
   "bluetooth": {
@@ -148,12 +155,14 @@
     "format-connected": " {num_connections}",
     "tooltip-format": " {device_alias}",
     "tooltip-format-connected": "{device_enumerate}",
-    "tooltip-format-enumerate-connected": " {device_alias}"
+    "tooltip-format-enumerate-connected": " {device_alias}",
+    "icon-size": 24
   },
 
   "user": {
     "format": "{user}",
     "interval": 60,
-    "icon": false
+    "icon": false,
+    "icon-size": 24
   }
 }

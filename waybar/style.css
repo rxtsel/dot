@@ -121,6 +121,7 @@ window#waybar.empty #window {
 #custom-exit {
   min-width: 24px;
   color: #ffffff;
+  margin-right: 15px;
 }
 
 /* -----------------------------------------------------
