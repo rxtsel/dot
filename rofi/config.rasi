@@ -19,12 +19,11 @@ configuration {
     display-run:                "RUN";
     display-filebrowser:        "FILES";
     display-window:             "WINDOW";
-	drun-display-format:        "{name}";
+    drun-display-format:        "{name}";
     hover-select:               true;
     me-select-entry:            "";
     me-accept-entry:            "MousePrimary";
     window-format:              "{w} · {c} · {t}";
-    
 }
 
 /* ---- Load pywal colors (custom wal template) ---- */
@@ -39,7 +38,7 @@ window {
     padding:                      0px;
     margin:                       0px; 
     color:                        #FFFFFF;
-    border:                       3px;
+    border:                       #1d1d1d;
     border-color:                 #FFFFFF;
     cursor:                       "default";
     transparency:                 "real";
@@ -161,7 +160,7 @@ element {
     cursor:                       pointer;
     background-color:             @background;
     border-radius:                10px;
-    border:                       2px;
+    border:                       0;
 }
 
 element normal.normal {

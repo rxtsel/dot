@@ -8,12 +8,11 @@ configuration {
     display-run:                "RUN";
     display-filebrowser:        "FILES";
     display-window:             "WINDOW";
-	hover-select:               true;
+    hover-select:               true;
     me-select-entry:            "";
     me-accept-entry:            "MousePrimary";
     drun-display-format:        "{name}";
     window-format:              "{w} · {c} · {t}";
-    
 }
 
 /* ---- Load pywal colors (custom wal template) ---- */
@@ -22,13 +21,13 @@ configuration {
 /* ---- Window ---- */
 window {
     width:                        400px;
-    x-offset:                     -15px;
-    y-offset:                     62px;
+    x-offset:                     -10px;
+    y-offset:                     45px;
     spacing:                      0px;
     padding:                      0px;
     margin:                       0px; 
-    color:                        #FFFFFF;
-    border:                       3px;
+    color:                        @foreground;
+    border:                       0;
     border-color:                 #FFFFFF;
     cursor:                       "default";
     transparency:                 "real";
@@ -150,7 +149,7 @@ element {
     cursor:                       pointer;
     background-color:             @background;
     border-radius:                10px;
-    border:                       2px;
+    border:                       0;
 }
 
 element normal.normal {
