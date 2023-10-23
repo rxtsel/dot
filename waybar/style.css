@@ -210,17 +210,17 @@ window#waybar.empty #window {
 #battery.plugged {
   color: #ffffff;
   background-color: transparent;
+  min-width: 24px;
 }
 
 @keyframes blink {
   to {
-    background-color: #ffffff;
-    color: #000000;
+    color: #f53c3c;
   }
 }
 
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
+  background-color: transparent;
   color: #ffffff;
   animation-name: blink;
   animation-duration: 0.5s;
