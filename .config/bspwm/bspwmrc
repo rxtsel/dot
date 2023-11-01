@@ -1,44 +1,60 @@
 #! /bin/sh
 
-#  ██                                            
-# ░██              ██████                        
-# ░██       ██████░██░░░██ ███     ██ ██████████ 
-# ░██████  ██░░░░ ░██  ░██░░██  █ ░██░░██░░██░░██
-# ░██░░░██░░█████ ░██████  ░██ ███░██ ░██ ░██ ░██
-# ░██  ░██ ░░░░░██░██░░░   ░████░████ ░██ ░██ ░██
-# ░██████  ██████ ░██      ███░ ░░░██ ███ ░██ ░██
-# ░░░░░   ░░░░░░  ░░      ░░░    ░░░ ░░░  ░░  ░░
-#                 github.com/rxtsel               
-
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d      
-        
-bspc config border_width         2
-bspc config border_normal_color  '#1d1d1d'
-bspc config focus_follows_pointer	true
-bspc config split_ratio          0.50
-bspc config borderless_monocle   false
+
+if xrandr | grep -q "HDMI-1 connected"; then
+  bspc monitor HDMI-1 -d I II III IV V VI
+
+else
+  bspc monitor -d I II III IV V VI
+fi
+
+bspc config border_width         1
+
+# gap=15
+# height=0
+# bspc config window_gap $gap;
+# bspc config top_padding $(($height-gap))
+# bspc config left_padding -$gap
+# bspc config right_padding -$gap
+# bspc config bottom_padding -$gap
+
+##Color settings
+bspc config normal_frame_opacity 1.0
+bspc config focused_frame_opacity 0.05
+bspc config focused_border_color "#000000"
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
 bspc config gapless_monocle      true
-bspc config border_radius 	 0
-bspc config single_monocle true
-bspc config borderless_monocle true
 
-######## CUSTOM ##########
-xsetroot -cursor_name left_ptr &
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Thunderbird desktop='^6'
 
-######## TOOLS ##########
+# bspc config pointer_follows_monitor true
+bspc config focus_follows_pointer   true
+bspc config auto_alternate          true
+
+# mouse
+# bspc config -m focused pointer_follows_monitor true
+
+####### LAUNCHERS #######
 polybar &
-nm-applet &
 picom &
-redshift &
-dunst &
+# nm-applet &
+blueman-applet &
 xfce4-power-manager &
 birdtray &
 
-####### LOCK SCREEN #######
-pkill xautolock
-xautolock -time 5 -locker "betterlockscreen -l" -notify 30 -notifier "notify-send 'Locker' 'Locking screen in 30 seconds'" -killtime 5 -killer "systemctl suspend" &
+###### DUAL MONITOR ######
+if xrandr | grep "HDMI-1 connected"; then
+    # xrandr --output HDMI-1 --primary --mode 1920x1080 --rate 120 --output eDP-1 --auto --left-of HDMI-1 &
+    xrandr --output HDMI-1 --primary --mode 1920x1080 --rate 120 --output eDP-1 --off
+fi
 
 ####### WALLPAPERS #######
-feh --bg-scale /home/rxtsel/Pictures/Wallpapers/minimal.png &
+feh --bg-scale /home/rxtsel/wallpapers/green.jpg &
+
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &

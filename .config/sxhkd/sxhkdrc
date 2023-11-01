@@ -1,31 +1,43 @@
-# TERMINAL
+#
+# wm independent hotkeys
+#
+
+# terminal emulator
 super + Return
 	alacritty
 
-# ROFI
-super + @space
+# program launcher
+super + r
 	rofi -show drun
 
-# CHROME
-super + b
-    google-chrome-stable
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
 
-# THUNAR
+# open browser
+super + b
+  chromium
+
+# open file manager
 super + e
-    thunar
+  nautilus
+
+# screent shot
+super + shift + s
+  flameshot gui
 
 # VOLUMEN
 XF86AudioRaiseVolume
-  pactl set-sink-volume @DEFAULT_SINK@ +10%
+  pamixer -i 5
 
 XF86AudioLowerVolume
-  pactl set-sink-volume @DEFAULT_SINK@ -10%
+  pamixer -d 5
 
 XF86AudioMute
-  pactl set-sink-mute @DEFAULT_SINK@ toggle
+  pamixer -t
 
 XF86AudioMicMute
-  pactl set-source-mute @DEFAULT_SOURCE@ toggle
+  pamixer -t --source 1
 
 # BRILLO
 XF86MonBrightnessUp
@@ -34,43 +46,27 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown	
 	brightnessctl set 10%-
 
-# FLAMESHOOT
-super + shift + s
-    flameshot gui
+#
+# bspwm hotkeys
+#
 
-# SALIR O REINICIAR BSPWM
+# quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
 
-# RECARGAR MAPEOS EN SXHKDRC
-    super + Escape
-    pkill -USR1 -x sxhkd
-
-# CERRAR Y MATAR
-super + {_,shift + }w
+# close and kill
+super + {_,shift + }c
 	bspc node -{c,k}
 
-# ALTERNAR VENTANA MAX O COLUMN
+# alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
 
-# LOCK SCREEN 
-super + ctrl + x
-  betterlockscreen -l dim
+# send the newest marked node to the newest preselected node
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
 
-# OPTION SHUTDOWN AND MORE 
-super + shift + l
-  /bin/bash /home/rxtsel/.config/rofi/scripts/power.sh
-
-# SEARCH 
-super + shift + f
-  /bin/bash /home/rxtsel/.config/rofi/scripts/search.sh
-
-# # send the newest marked node to the newest preselected node
-# super + y
-# 	bspc node newest.marked.local -n newest.!automatic.local
-
-# MOVER VENTANA DE FOCO A LA COLUMNA GRANDE
+# swap the current node and the biggest window
 super + g
 	bspc node -s biggest.window
 
@@ -78,7 +74,7 @@ super + g
 # state/flags
 #
 
-# MODIFICAR VENTANA ENTRE (mosaico(t), semimosaico(shift+t), flotante(s) y fullscreen(f))
+# set the window state
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
@@ -94,27 +90,27 @@ super + ctrl + {m,x,y,z}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# # focus the node for the given path jump
-# super + {p,b,comma,period}
-# 	bspc node -f @{parent,brother,first,second}
+# focus the node for the given path jump
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
 super + {_,shift + }c
 	bspc node -f {next,prev}.local.!hidden.window
 
-# DEXPLAZARCE ENTRE GRUPOS DE VENTANA
-super + {comma,period}
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
-# ENFOCAR ENTRE GRUPOS PREVIOS
+# focus the last node/desktop
 super + {grave,Tab}
 	bspc {node,desktop} -f last
 
-# # focus the older or newer node in the focus history
-# super + {o,i}
-# 	bspc wm -h off; \
-# 	bspc node {older,newer} -f; \
-# 	bspc wm -h on
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
