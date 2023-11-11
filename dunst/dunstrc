@@ -316,7 +316,7 @@
     background = "#1d1d1d"
     foreground = "#f5f5f5"
     frame_color = "#1d1d1d"
-    icon = "~/Dotfiles/dunst/icons/hyprdots.svg"
+    icon = "~/dot/dunst/icons/hyprdots.svg"
     timeout = 3
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
@@ -325,7 +325,7 @@
     background = "#1d1d1d"
     foreground = "#f5f5f5"
     frame_color = "#1d1d1d"
-    icon = "~/Dotfiles/dunst/icons/hyprdots.svg"
+    icon = "~/dot/dunst/icons/hyprdots.svg"
     timeout = 3
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
@@ -334,7 +334,7 @@
     background = "#1d1d1d"
     foreground = "#f5f5f5"
     frame_color = "#f38ba8"
-    icon = "~/Dotfiles/dunst/icons/critical.svg"
+    icon = "~/dot/dunst/icons/critical.svg"
     timeout = 3
     # Icon for notifications with critical urgency, uncomment to enable
     #default_icon = /path/to/icon

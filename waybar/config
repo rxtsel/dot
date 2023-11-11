@@ -9,7 +9,7 @@
   "mode": "dock",
   "spacing": 4,
 
-  "include": ["~/Dotfiles/waybar/modules.json"],
+  "include": ["~/dot/waybar/modules.json"],
 
   "modules-left": [
     "hyprland/workspaces",

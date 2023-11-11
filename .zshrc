@@ -10,7 +10,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-alias dot="cd ~/Dotfiles"
+alias dot="cd ~/dot"
 alias pro="cd ~/Desktop/Proyects"
 alias zr="source ~/.zshrc"
 alias v="nvim"
