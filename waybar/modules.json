@@ -10,7 +10,7 @@
       "default": "",
       "persistent": ""
     },
-    "persistent_workspaces": {
+    "persistent-workspaces": {
       "1": ["eDP-1"],
       "2": ["HDMI-A-1"]
     }

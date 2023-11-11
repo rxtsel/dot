@@ -2,7 +2,7 @@
 # ----------------------------------------------------- 
 # Select wallpaper
 # ----------------------------------------------------- 
-selected=$(ls -1 ~/wallpapers | grep "jpg" | rofi -dmenu -config ~/dot/rofi/config-wallpapers.rasi -p "Wallpapers")
+selected=$(ls -1 ~/dot/wallpapers | grep "jpg" | rofi -dmenu -config ~/dot/rofi/config-wallpapers.rasi -p "Wallpapers")
 
 if [ "$selected" ]; then
 
@@ -22,7 +22,7 @@ if [ "$selected" ]; then
     # ----------------------------------------------------- 
     cp $wallpaper ~/.cache/current_wallpaper.jpg   
 
-    newwall=$(echo $wallpaper | sed "s|$HOME/wallpapers/||g")
+    newwall=$(echo $wallpaper | sed "s|$HOME/dot/wallpapers/||g")
 
     # ----------------------------------------------------- 
     # Set the new wallpaper
