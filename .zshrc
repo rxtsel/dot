@@ -11,7 +11,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 alias dot="cd ~/dot"
-alias pro="cd ~/Desktop/Proyects"
+alias pro="cd ~/Desktop/Projects"
 alias zr="source ~/.zshrc"
 alias v="nvim"
 alias vim="nvim"
@@ -22,7 +22,8 @@ alias -s {html,js,css,py,go,lua}="nvim"
 alias clean="cd /var/cache/pacman/pkg/ && sudo rm -rf * && sudo pacman -Scc && yay -Scc && cd ~/ && sudo rm -rf ~/.cache/ && cd"
 alias D="cd ~/Downloads"
 alias t="tmux"
-alias tpro="cd ~/Desktop/Proyects && tmux"
+alias tpro="cd ~/Desktop/Projects && tmux"
+alias icat="kitty +kitten icat"
 
 # envs
 fpath+=${ZDOTDIR:-~}/.zsh_functions
@@ -30,3 +31,5 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 # fnm
 export PATH="/home/rxtsel/.local/share/fnm:$PATH"
 eval "`fnm env`"
+
+export TERMINAL=kitty

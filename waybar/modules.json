@@ -7,12 +7,7 @@
     "format-icons": {
       "urgent": "",
       "active": "",
-      "default": "",
-      "persistent": ""
-    },
-    "persistent-workspaces": {
-      "1": ["eDP-1"],
-      "2": ["HDMI-A-1"]
+      "default": ""
     }
   },
 
