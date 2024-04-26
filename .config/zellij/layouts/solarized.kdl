@@ -18,7 +18,7 @@ layout {
             plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
                 format_left   "{mode}{tabs}"
                 format_center ""
-                format_right  "#[fg=#ADB8B8,bg=#002B36]#[fg=#002B36,bg=#ADB8B8] rxtsel-max #[fg=#002B36,bg=#ADB8B8]"
+                format_right  "#[fg=#ADB8B8,bg=#002B36]#[fg=#002B36,bg=#ADB8B8] rxtsel #[fg=#002B36,bg=#ADB8B8]"
                 format_space  ""
 
                 mode_normal        "#[fg=#002B36,bg=#ADB8B8] {name}#[fg=#ADB8B8,bg=#ADB8B8]#[fg=#ADB8B8,bg=#002B36]"
