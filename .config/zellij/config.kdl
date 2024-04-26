@@ -236,6 +236,7 @@ plugins {
     status-bar { path "status-bar"; }
     strider { path "strider"; }
     compact-bar { path "compact-bar"; }
+    session-manager { path "session-manager"; }
 }
 
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
@@ -323,7 +324,7 @@ auto_layout true
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "compact"
+default_layout "solarized"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
