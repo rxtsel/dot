@@ -1,34 +1,24 @@
 /* -----------------------------------------------------
  * Import Pywal colors 
  * ----------------------------------------------------- */
-@import "../../.cache/wal/colors-waybar.css";
-
 /* -----------------------------------------------------
  * General 
  * ----------------------------------------------------- */
 
 * {
   font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+    "SF Pro Display",
+    -apple-system;
   border: none;
   border-radius: 0;
+  font-weight: 600;
 }
 
 window#waybar {
   border: none;
   margin: 0;
   padding: 0;
-  background-color: @background;
+  background-color: transparent;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -48,7 +38,8 @@ window#waybar {
 #workspaces button {
   background-color: transparent;
   transition: all 0.5s ease-in-out;
-  opacity: 0.3;
+  color: #cccccc;
+  opacity: 0.4;
 }
 
 #workspaces button.active {
@@ -66,14 +57,14 @@ window#waybar {
  * ----------------------------------------------------- */
 
 tooltip {
-  border-radius: 10px;
-  background-color: @background;
+  border-radius: 4px;
+  background-color: #1d1d1d;
   padding: 20px;
   margin: 0;
 }
 
 tooltip label {
-  color: @foreground;
+  color: #ffffff;
 }
 
 /* -----------------------------------------------------
@@ -85,7 +76,7 @@ tooltip label {
   margin: 0 15px 0;
   padding: 2px 10px 0 10px;
   border-radius: 12px;
-  color: @foreground;
+  color: #ffffff;
   font-size: 16px;
   font-weight: normal;
   opacity: 0.8;
@@ -110,8 +101,7 @@ window#waybar.empty #window {
  * Custom Quicklinks
  * ----------------------------------------------------- */
 
-#custom-chatgpt,
-#custom-cliphist {
+#custom-chatgpt {
   min-width: 24px;
   color: #ffffff;
 }
@@ -122,7 +112,7 @@ window#waybar.empty #window {
 #custom-exit {
   min-width: 24px;
   color: #ffffff;
-  margin-right: 15px;
+  margin-right: 5px;
 }
 
 /* -----------------------------------------------------
@@ -144,6 +134,7 @@ window#waybar.empty #window {
   font-weight: normal;
   border-radius: 15px;
   transition: background-color 0.5s ease;
+  margin-right: 15px;
 }
 
 /* -----------------------------------------------------
@@ -194,40 +185,6 @@ window#waybar.empty #window {
   background-color: transparent;
   padding: 0;
   margin: 0;
-}
-
-/* -----------------------------------------------------
- * Battery
- * ----------------------------------------------------- */
-#battery {
-  background-color: transparent;
-  font-size: 16px;
-  color: #ffffff;
-  opacity: 0.8;
-  min-width: 24px;
-}
-
-#battery.charging,
-#battery.plugged {
-  color: #ffffff;
-  background-color: transparent;
-  min-width: 24px;
-}
-
-@keyframes blink {
-  to {
-    color: #f53c3c;
-  }
-}
-
-#battery.critical:not(.charging) {
-  background-color: transparent;
-  color: #ffffff;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
 
 /* -----------------------------------------------------

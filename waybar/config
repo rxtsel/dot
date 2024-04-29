@@ -4,7 +4,7 @@
   "margin-bottom": 0,
 
   "layer": "top",
-  "height": 30,
+  "height": 32,
   "exclusive": true,
   "mode": "dock",
   "spacing": 4,
@@ -16,19 +16,17 @@
     "group/quicklinks"
   ],
 
-  "modules-center": [
-    "clock"
-  ],
+  "modules-center": [],
 
   "modules-right": [
     //"bluetooth",
     "group/hardware",
     "tray",
     "pulseaudio",
-    "battery",
-    "custom/cliphist",
     "network",
-    "custom/exit"
+    "custom/exit",
+    "clock"
+
   ],
 
   "group/quicklinks": {
