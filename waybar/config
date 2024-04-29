@@ -19,9 +19,9 @@
   "modules-center": [],
 
   "modules-right": [
-    //"bluetooth",
     "group/hardware",
     "tray",
+    "bluetooth",
     "pulseaudio",
     "network",
     "custom/exit",
