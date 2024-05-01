@@ -1,4 +1,5 @@
 #!/bin/sh
 killall waybar
 
-waybar -c ~/dot/waybar/config & -s ~/dot/waybar/style.css  
+waybar -c ~/dot/.config/waybar/config &
+-s ~/dot/.config/waybar/style.css
