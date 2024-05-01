@@ -19,16 +19,14 @@
   "modules-center": [],
 
   "modules-right": [
-    "group/hardware",
     "tray",
     "bluetooth",
     "pulseaudio",
     "network",
     "custom/exit",
-        "hyprland/language",
-
+    "group/hardware",
+    "hyprland/language",
     "clock"
-
   ],
 
   "group/quicklinks": {
