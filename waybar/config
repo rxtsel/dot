@@ -25,6 +25,8 @@
     "pulseaudio",
     "network",
     "custom/exit",
+        "hyprland/language",
+
     "clock"
 
   ],

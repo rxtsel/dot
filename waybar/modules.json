@@ -57,7 +57,7 @@
   },
 
   "clock": {
-    "format": "{:%a %B %d %H:%M%p}"
+    "format": "{:%a %B %d %H:%M %p}"
   },
 
   "cpu": {
@@ -113,5 +113,11 @@
     "interval": 60,
     "icon": false,
     "icon-size": 24
+  },
+
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "DV",
+    "format-es": "SP"
   }
 }
