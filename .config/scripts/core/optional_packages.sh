@@ -9,6 +9,12 @@ install_dev_utils() {
 		curl -fsSL https://fnm.vercel.app/install | zsh &&
 			export PATH="/home/rxtsel/.local/share/fnm:$PATH"
 		eval "$(fnm env)"
+
+		source ~/.zshrc &&
+			fnm install v20 &&
+			soure ~/.zshrc &&
+			npm i -g @antfu/ni &&
+			npm install -g commitizen cz-conventional-changelog && echo '{ "path": "cz-conventional-changelog" }' >~/.czrc
 	else
 		echo "Skipping installation of utils for development."
 	fi
