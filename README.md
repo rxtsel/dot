@@ -160,7 +160,7 @@ ln -s ~/dot/.config/gammastep ~/.config/
 1. **Install greetd**:
 
    ```bash
-   sudo pacman -S greetd-tuigreet-git
+   sudo pacman -S greetd-tuigreet
    ```
 
 2. **Enable greetd service**:
