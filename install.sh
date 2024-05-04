@@ -59,6 +59,11 @@ create_symlinks() {
 	ln -s ~/dot/.zshrc ~/.zshrc
 }
 
+add_bg() {
+	swww img ~/dot/wallpapers/default.png --no-resize
+
+}
+
 # Main script
 echo "Welcome to the Arch Linux with Hyprland configuration script!"
 
@@ -69,6 +74,7 @@ install_aur_packages
 install_oh_my_zsh
 install_fonts
 create_symlinks
+add_bg
 
 echo "Base packages completed successfully!"
 
