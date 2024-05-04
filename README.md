@@ -42,6 +42,36 @@ cd && wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Casc
 sudo unzip CascadiaCode.zip -d /usr/share/fonts/CascadiaCode
 ```
 
+### Utils for development
+
+```bash
+curl -fsSL https://fnm.vercel.app/install | zsh &&
+export PATH="/home/rxtsel/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+```
+
+Install a node version:
+
+```bash
+# list node versions remote
+fnm list-remote
+
+# install node version
+fnm install <your_version>
+```
+
+Install package manager:
+
+```bash
+npm i -g @antfu/ni
+```
+
+Install `cz-cli` globally:
+
+```bash
+npm install -g commitizen cz-conventional-changelog && echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+```
+
 ### Display manager
 
 Enable greetd service:
@@ -58,21 +88,6 @@ sudo rm /etc/greetd/config.toml && sudo ln -s ~/dot/custom/tuigreet/config.toml 
 
 For more customization, read this [doc](https://github.com/apognu/tuigreet?tab=readme-ov-file).
 
-### dev
-
-```bash
-curl -fsSL https://fnm.vercel.app/install | zsh &&
-export PATH="/home/rxtsel/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-
-# install a node version, list with fnm list-remote
-# install ni
-npm i -g @antfu/ni
-
-# install cz-cli
-npm install -g commitizen cz-conventional-changelog && echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
-```
-
 ### rEFInd
 
 Copy theme folder to `/boot/EFI/refind/` folder:
@@ -81,7 +96,11 @@ Copy theme folder to `/boot/EFI/refind/` folder:
 sudo cp ~/dot/custom/refind/themes/ /boot/EFI/refind/
 ```
 
-Copy refind.conf to `/boot/EFI/refind/` folder:
+Copy `refind.conf` to `/boot/EFI/refind/` folder:
+
+```bash
+sudo cp ~/dot/custom/refind/refind.conf /boot/EFI/refind/
+```
 
 > [!IMPORTANT]
 > Edit `refind.conf` it to your liking. For example: PARTUUID, UUID, etc.
@@ -115,6 +134,4 @@ menuentry "Windows 11" {
 }
 ```
 
-```bash
-sudo cp ~/dot/custom/refind/refind.conf /boot/EFI/refind/
-```
+For more customization, read this [doc](https://www.rodsbooks.com/refind/).
