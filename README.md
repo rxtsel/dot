@@ -31,6 +31,14 @@ My setup for Arch Linux with Hyprland, Waybar, Kitty, and other tools. This setu
 
 </details>
 
+## Automatic installation
+
+```bash
+chmod +x ~/dot/install.sh && ~/dot/install.sh
+```
+
+## Manual installation
+
 ## 1. Yay
 
 **Replace `<username>` with your username**.
