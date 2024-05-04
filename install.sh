@@ -26,22 +26,24 @@ install_aur_packages() {
 
 # Function to install Oh-my-zsh and plugins
 install_oh_my_zsh() {
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &&
-		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting &&
-		git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+	sudo chsh -s $(which zsh) &&
+		source ~/.zshrc &&
+		sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 }
 
 # Function to install fonts
 install_fonts() {
 	sudo pacman -S --noconfirm noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-dejavu ttf-liberation ttf-font-awesome ttf-bitstream-vera gnu-free-fonts ttf-croscore ttf-droid ttf-ibm-plex ttf-liberation ttf-fira-sans ttf-fira-code ttf-firacode-nerd
 	cd /usr/share/fonts/ &&
-		sudo wget -q --show-progress -O CascadiaCode.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip &&
-		sudo unzip -oq CascadiaCode.zip &&
-		sudo rm -f CascadiaCode.zip &&
-		sudo wget -q --show-progress -O SanFranciscoPro.zip https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts/archive/refs/heads/master.zip &&
-		sudo unzip -oq SanFranciscoPro.zip &&
-		sudo rm -f SanFranciscoPro.zip &&
-		fc-cache -f -v
+		sudo wget -q --show-progress -O CascadiaCode.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip
+	sudo wget -q --show-progress -O SanFranciscoPro.zip https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts/archive/refs/heads/master.zip
+	sudo unzip -oq CascadiaCode.zip -d /usr/share/fonts/cascadia &&
+		sudo rm -f CascadiaCode.zip
+	sudo unzip -oq SanFranciscoPro.zip &&
+		sudo rm -f SanFranciscoPro.zip
+	fc-cache -f -v
 }
 
 # Function to create symlinks for configurations
@@ -56,7 +58,7 @@ create_symlinks() {
 	ln -s ~/dot/.config/waybar ~/.config/
 	ln -s ~/dot/.config/hypr ~/.config/
 	ln -s ~/dot/.config/gammastep ~/.config/
-	ln -s ~/dot/.zshrc ~/.zshrc
+	ln -s ~/dot/.zshrc ~/
 }
 
 add_bg() {

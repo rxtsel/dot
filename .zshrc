@@ -19,14 +19,3 @@ alias zz="cd ~/.config"
 alias vcfg="cd ~/.config/nvim/ && nvim init.lua"
 alias clean="sudo pacman -Rns \$(pacman -Qtdq) && sudo pacman -Sc && yay -Yc && sudo rm -rf ~/.cache/ || true && find ~/.cache -type f -print -delete || true"
 alias z="zellij"
-
-# fnm
-export PATH="/home/rxtsel/.local/share/fnm:$PATH"
-eval "`fnm env`"
-
-# bun completions
-[ -s "/home/rxtsel/.bun/_bun" ] && source "/home/rxtsel/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"

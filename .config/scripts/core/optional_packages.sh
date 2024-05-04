@@ -13,8 +13,8 @@ install_dev_utils() {
 		source ~/.zshrc &&
 			fnm install v20 &&
 			soure ~/.zshrc &&
-			npm i -g @antfu/ni &&
-			npm install -g commitizen cz-conventional-changelog && echo '{ "path": "cz-conventional-changelog" }' >~/.czrc
+			npm i -g @antfu/ni commitizen cz-conventional-changelog &&
+			echo '{ "path": "cz-conventional-changelog" }' >~/.czrc
 	else
 		echo "Skipping installation of utils for development."
 	fi
