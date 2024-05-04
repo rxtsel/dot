@@ -2,6 +2,22 @@
 
 My setup for Arch Linux with Hyprland, Waybar, Kitty, and other tools. This setup is for a desktop environment, but it can be adapted to a laptop. This setup is based on **solarized-dark** colors.
 
+## Indice
+
+- [Gallery](#gallery)
+- [Yay](#1-yay)
+- [Install dependencies](#2-install-dependencies)
+- [Oh-my-zsh](#3-oh-my-zsh)
+- [Fonts](#4-fonts)
+- [Create symlinks for configurations](#5-create-symlinks-for-configurations)
+- [Utils for development](#6-utils-for-development-optional) (optional)
+- [Display manager](#7-display-manager-optional) (optional)
+- [rEFInd](#8-refind-optional) (optional)
+  - [Install rEFInd](#1-install-refind)
+  - [Uninstall Other Bootloaders](#2-uninstall-other-bootloaders)
+  - [Customize rEFInd](#3-customize-refind)
+- [Plymouth](#9-plymouth-optional) (optional)
+
 ## Gallery
 
 ![desktop1](./screenshots/1714592501_grim.png)
@@ -17,7 +33,7 @@ My setup for Arch Linux with Hyprland, Waybar, Kitty, and other tools. This setu
 
 ## 1. Yay
 
-Replace `<username>` with your username.
+**Replace `<username>` with your username**.
 
 ```bash
 sudo pacman -S base-devel git &&
@@ -30,103 +46,138 @@ makepkg -si
 
 ## 2. Install dependencies
 
-1. Pacman packages:
+1. **Pacman packages**:
 
-```bash
-sudo pacman -S neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent qt5-wayland qt5-wayland grim slurp mpv tofi thunar waybar ark ttf-fira-sans ttf-fira-code ttf-firacode-nerd bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip discord spotify-launcher zsh swaync greetd-tuigreet
-```
+   ```bash
+   sudo pacman -S neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent qt5-wayland qt5-wayland grim slurp mpv tofi thunar waybar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync
+   ```
 
-2. AUR packages:
+2. **AUR packages**:
 
-```bash
-yay -S swww ffmpegthumbnailer xdg-desktop-portal-hyprland-git gammastep wlr-randr lightdm-git
-```
+   ```bash
+   yay -S swww ffmpegthumbnailer xdg-desktop-portal-hyprland-git gammastep wlr-randr lightdm-git mkinitcpio-firmware
+   ```
 
-3. Add background image:
+3. **Add background image**:
 
-```bash
-swww img ~/dot/wallpapers/default.png --no-resize
-```
+   ```bash
+   swww img ~/dot/wallpapers/default.png --no-resize
+   ```
 
 ## 3. Oh-my-zsh
 
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &&
-sudo chsh -s $(which zsh) &&
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting &&
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-```
+1. **Install Oh-my-zsh**:
 
-- _Reboot compositor._
+   ```bash
+   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+   ```
+
+2. **Exit the terminal and open it again**. Oh-my-zsh will ask if she wants to have zsh by default, you say `yes`.
+3. **Install plugins**:
+
+   ```bash
+   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting &&
+   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+   ```
+
+4. **Edit `~/.zshrc`**. In my case, I use the following configuration:
+
+   ```bash
+   rm ~/.zshrc && ln -s ~/dot/zsh/zshrc ~/.zshrc
+   ```
+
+_**Reboot compositor**._
 
 ## 4. Fonts
 
-1. For emoji support, install the following fonts:
+1. **For emoji support**, install the following fonts:
+
+   ```bash
+   sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-dejavu ttf-liberation ttf-font-awesome ttf-bitstream-vera gnu-free-fonts ttf-croscore ttf-droid ttf-ibm-plex ttf-liberation ttf-fira-sans ttf-fira-code ttf-firacode-nerd
+   ```
+
+2. **Custom fonts** for waybar, kitty, etc:
+
+   ```bash
+   cd ~/Downloads/ &&
+   wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip &&
+   sudo unzip CascadiaCode.zip -d /usr/share/fonts/CascadiaCode &&
+   wget https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts/archive/refs/heads/master.zip &&
+   unzip master.zip -d /usr/share/fonts/SanFranciscoPro -d /usr/share/fonts/SanFranciscoPro &&
+   fc-cache -f -v
+   ```
+
+## 5. Create symlinks for configurations
+
+If a folder exists, it is deleted before create symlinks:
 
 ```bash
-sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-dejavu ttf-liberation ttf-font-awesome ttf-bitstream-vera gnu-free-fonts ttf-croscore ttf-droid ttf-ibm-plex ttf-liberation
+[ -d ~/.config/kitty ] && rm -rf ~/.config/kitty
+[ -d ~/.config/waybar ] && rm -rf ~/.config/waybar
+[ -d ~/.config/hypr ] && rm -rf ~/.config/hypr
+[ -d ~/.config/gammastep ] && rm -rf ~/.config/gammastep
+
+ln -s ~/dot/.config/kitty ~/.config/
+ln -s ~/dot/.config/waybar ~/.config/
+ln -s ~/dot/.config/hypr ~/.config/
+ln -s ~/dot/.config/gammastep ~/.config/
 ```
 
-2. Custom fonts for waybar, kitty, etc:
+## 6. Utils for development (optional)
 
-```bash
-cd ~/Downloads/ &&
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip &&
-sudo unzip CascadiaCode.zip -d /usr/share/fonts/CascadiaCode &&
-wget https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts/archive/refs/heads/master.zip &&
-unzip master.zip -d /usr/share/fonts/SanFranciscoPro -d /usr/share/fonts/SanFranciscoPro &&
-fc-cache -f -v
-```
+1. **Install [fnm](https://github.com/Schniz/fnm) node version manager**:
 
-## 5. Utils for development (optional)
+   ```bash
+   curl -fsSL https://fnm.vercel.app/install | zsh &&
+   export PATH="/home/rxtsel/.local/share/fnm:$PATH"
+   eval "`fnm env`"
+   ```
 
-1. Install [fnm](https://github.com/Schniz/fnm) a node version manager:
+2. **Install a node version**:
 
-```bash
-curl -fsSL https://fnm.vercel.app/install | zsh &&
-export PATH="/home/rxtsel/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-```
+   ```bash
+    # list node versions remote
+    fnm list-remote
 
-2. Install a node version:
+    # install node version
+   fnm install <your_version>
+   ```
 
-```bash
-# list node versions remote
-fnm list-remote
+3. **Install fast package manager**:
 
-# install node version
-fnm install <your_version>
-```
+   ```bash
+   npm i -g @antfu/ni
+   ```
 
-3. Install package manager:
+4. **Install `cz-cli` globally**:
 
-```bash
-npm i -g @antfu/ni
-```
+   ```bash
+   npm install -g commitizen cz-conventional-changelog && echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+   ```
 
-4. Install `cz-cli` globally:
+## 7. Display manager (optional)
 
-```bash
-npm install -g commitizen cz-conventional-changelog && echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
-```
+1. **Install greetd**:
 
-## 6. Display manager (optional)
+   ```bash
+   sudo pacman -S greetd-tuigreet-git
+   ```
 
-Enable greetd service:
+2. **Enable greetd service**:
 
-```bash
-sudo systemctl enable greetd.service
-```
+   ```bash
+   sudo systemctl enable greetd.service
+   ```
 
-Add config:
+3. **Add config**:
 
-```bash
-sudo rm /etc/greetd/config.toml && sudo ln -s ~/dot/custom/tuigreet/config.toml /etc/greetd/
-```
+   ```bash
+   sudo rm /etc/greetd/config.toml && sudo ln -s ~/dot/custom/tuigreet/config.toml /etc/greetd/
+   ```
 
-For more customization, read this [doc](https://github.com/apognu/tuigreet?tab=readme-ov-file).
+_**For more customization**, read this [doc](https://github.com/apognu/tuigreet?tab=readme-ov-file)._
 
-## 7. [rEFInd](https://wiki.archlinux.org/title/REFInd) (optional)
+## 8. [rEFInd](https://wiki.archlinux.org/title/REFInd) (optional)
 
 rEFInd is more customizable than GRUB or systemd-boot; for example, you can change the theme, add icons, etc. It also allows the use of a mouse or touchpad, which is very useful when you have a wireless keyboard. Some features include:
 
@@ -135,7 +186,15 @@ rEFInd is more customizable than GRUB or systemd-boot; for example, you can chan
 - Option to use mouse or touchpad
 - Automatic detection of other operating systems, useful for multiboot setups
 
-### 1. Uninstall Other Bootloaders
+### 1. Install rEFInd
+
+```bash
+sudo pacman -S refind && refind-install
+```
+
+---
+
+### 2. Uninstall Other Bootloaders
 
 Before installing rEFInd, you need to uninstall any existing bootloaders such as GRUB or systemd-boot.
 
@@ -160,21 +219,17 @@ Before installing rEFInd, you need to uninstall any existing bootloaders such as
 
 #### 1.2. For Systemd-boot
 
-Remove systemd-boot:
+**Remove systemd-boot**:
 
 ```bash
 sudo bootctl remove
 ```
 
-### 2. Install rEFInd
-
-Install rEFInd using `pacman` and run the installation script:
-
-```bash
-sudo pacman -S refind && refind-install
-```
+---
 
 ### 3. Customize rEFInd
+
+In my case, I use a custom theme for rEFInd.
 
 #### 3.1. Themes
 
@@ -234,3 +289,63 @@ menuentry "Windows 11" {
 For further customization options, consult the [ArchWiki rEFInd documentation](https://wiki.archlinux.org/title/REFInd).
 
 ---
+
+## 9. [Plymouth](https://wiki.archlinux.org/title/plymouth) (optional)
+
+Plymouth is a splash screen that hides the boot process, providing a more polished appearance. This section covers the installation and configuration of Plymouth.
+
+1. **Install Plymouth**:
+
+   ```bash
+   yay -S plymouth
+   ```
+
+2. **Edit `/etc/mkinitcpio.conf`**:
+
+   ```bash
+   sudo nvim /etc/mkinitcpio.conf
+   ```
+
+   1. Add `plymouth` to the `HOOKS` array after `udev`:
+
+      ```bash
+      HOOKS=(base udev plymouth ...)
+      ```
+
+3. **Regenerate the initramfs**:
+
+   ```bash
+   sudo mkinitcpio -p linux
+   ```
+
+4. **Edit `refind.conf`**:
+
+   1. Open `refind.conf`:
+      ```bash
+      sudo nvim /boot/EFI/refind/refind.conf
+      ```
+   2. Add `splash` after `"ro root=... add_efi_memmap` option, for example:
+
+      ```bash
+      options  "root=PARTUUID=<YOUR_PARTUUID> rw add_efi_memmap splash"
+      ```
+
+5. **Setup plymouth theme**:
+
+   1. Install the theme:
+
+      ```bash
+      yay -S plymouth-theme-arch-darwin
+      ```
+
+   2. List available themes:
+
+      ```bash
+        sudo plymouth-set-default-theme -l
+      ```
+
+   3. Set the theme:
+
+      ```bash
+      sudo plymouth-set-default-theme -R arch-darwin
+      ```
