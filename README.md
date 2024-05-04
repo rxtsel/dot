@@ -1,5 +1,20 @@
 # After [minimal Arch linux setup](https://www.rxtsel.dev/en/blog/how-to-install-arch-linux-using-the-command-line/), then:
 
+My setup for Arch Linux with Hyprland, Waybar, Kitty, and other tools. This setup is for a desktop environment, but it can be adapted to a laptop. This setup is based on **solarized-dark** colors.
+
+## Gallery
+
+![desktop1](./screenshots/1714592501_grim.png)
+
+<details>
+  <summary>Click here for more photos</summary>
+
+|                                                           |                                                       |
+| --------------------------------------------------------- | ----------------------------------------------------- |
+| ![desktop screentshot](./screenshots/1714785616_grim.png) | ![nvim screenshot](./screenshots/1714786448_grim.png) |
+
+</details>
+
 ## 1. Yay
 
 Replace `<username>` with your username.
@@ -15,16 +30,22 @@ makepkg -si
 
 ## 2. Install dependencies
 
-Pacman packages:
+1. Pacman packages:
 
 ```bash
 sudo pacman -S neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent qt5-wayland qt5-wayland grim slurp mpv tofi thunar waybar ark ttf-fira-sans ttf-fira-code ttf-firacode-nerd bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip discord spotify-launcher zsh swaync greetd-tuigreet
 ```
 
-AUR packages:
+2. AUR packages:
 
 ```bash
 yay -S swww ffmpegthumbnailer xdg-desktop-portal-hyprland-git gammastep wlr-randr lightdm-git
+```
+
+3. Add background image:
+
+```bash
+swww img ~/dot/wallpapers/default.png --no-resize
 ```
 
 ## 3. Oh-my-zsh
@@ -40,11 +61,17 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 ## 4. Fonts
 
-For emoji support, install the following fonts:
+1. For emoji support, install the following fonts:
 
 ```bash
-sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-dejavu ttf-liberation ttf-font-awesome ttf-bitstream-vera gnu-free-fonts ttf-croscore ttf-droid ttf-ibm-plex ttf-liberation &&
-cd && wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip &&
+sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-dejavu ttf-liberation ttf-font-awesome ttf-bitstream-vera gnu-free-fonts ttf-croscore ttf-droid ttf-ibm-plex ttf-liberation
+```
+
+2. Custom fonts for waybar, kitty, etc:
+
+```bash
+cd ~/Downloads/ &&
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip &&
 sudo unzip CascadiaCode.zip -d /usr/share/fonts/CascadiaCode &&
 wget https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts/archive/refs/heads/master.zip &&
 unzip master.zip -d /usr/share/fonts/SanFranciscoPro -d /usr/share/fonts/SanFranciscoPro &&
