@@ -357,3 +357,24 @@ Plymouth is a splash screen that hides the boot process, providing a more polish
       ```bash
       sudo plymouth-set-default-theme -R arch-darwin
       ```
+
+## 10. [Ollama](https://ollama.com/):
+
+1. **Install Ollama**:
+   ```bash
+   curl -fsSL https://ollama.com/install.sh | sh
+   ```
+2. **Install a model**:
+
+   ```bash
+   ollama pull llama3
+   ```
+
+3. **Install [Open WebUI](https://docs.openwebui.com/)**:
+
+   1. Install [Docker](https://docs.docker.com/engine/install/).
+
+   2. Install Open WebUI:
+      ```bash
+      docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+      ```
