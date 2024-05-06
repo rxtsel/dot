@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #Source the file with optional packages functions
 chmod +x ~/dot/.config/scripts/core/optional_packages.sh
 source ~/dot/.config/scripts/core/optional_packages.sh
@@ -16,7 +15,7 @@ install_yay() {
 
 # Function to install pacman packages
 install_pacman_packages() {
-	sudo pacman -S --noconfirm neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent qt5-wayland qt5-wayland grim slurp mpv tofi thunar waybar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync
+	sudo pacman -S --noconfirm neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent qt5-wayland qt5-wayland grim slurp mpv tofi thunar waybar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync imagemagick
 }
 
 # Function to install AUR packages using yay

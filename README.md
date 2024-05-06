@@ -5,18 +5,19 @@ My setup for Arch Linux with Hyprland, Waybar, Kitty, and other tools. This setu
 ## Indice
 
 - [Gallery](#gallery)
-- [Yay](#1-yay)
-- [Install dependencies](#2-install-dependencies)
-- [Oh-my-zsh](#3-oh-my-zsh)
-- [Fonts](#4-fonts)
-- [Create symlinks for configurations](#5-create-symlinks-for-configurations)
-- [Utils for development](#6-utils-for-development-optional) (optional)
-- [Display manager](#7-display-manager-optional) (optional)
-- [rEFInd](#8-refind-optional) (optional)
-  - [Install rEFInd](#1-install-refind)
-  - [Uninstall Other Bootloaders](#2-uninstall-other-bootloaders)
-  - [Customize rEFInd](#3-customize-refind)
-- [Plymouth](#9-plymouth-optional) (optional)
+- [Automatic installation](#automatic-installation)
+- [Manual installation](#manual-installation)
+- [Clone repository](#1-clone-repository)
+- [Yay](#2-yay)
+- [Install dependencies](#3-install-dependencies)
+- [Oh-my-zsh](#4-oh-my-zsh)
+- [Fonts](#5-fonts)
+- [Create symlinks for configurations](#6-create-symlinks-for-configurations)
+- [Utils for development](#7-utils-for-development-optional) (optional)
+- [Display manager](#8-display-manager-optional) (optional)
+- [rEFInd](#9-refind-optional) (optional)
+- [Plymouth](#11-plymouth-optional) (optional)
+- [Ollama](#12-ollama-optional) (optional)
 
 ## Gallery
 
@@ -39,7 +40,13 @@ chmod +x ~/dot/install.sh && ~/dot/install.sh
 
 ## Manual installation
 
-## 1. Yay
+## 1. Clone repository
+
+```bash
+git clone git@github.com:rxtsel/dot.git
+```
+
+## 2. Yay
 
 **Replace `<username>` with your username**.
 
@@ -52,12 +59,12 @@ cd yay-git &&
 makepkg -si
 ```
 
-## 2. Install dependencies
+## 3. Install dependencies
 
 1. **Pacman packages**:
 
    ```bash
-   sudo pacman -S neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent qt5-wayland qt5-wayland grim slurp mpv tofi thunar waybar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync
+   sudo pacman -S neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent qt5-wayland qt5-wayland grim slurp mpv tofi thunar waybar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync imagemagick
    ```
 
 2. **AUR packages**:
@@ -72,7 +79,7 @@ makepkg -si
    swww img ~/dot/wallpapers/default.png --no-resize
    ```
 
-## 3. Oh-my-zsh
+## 4. Oh-my-zsh
 
 1. **Install Oh-my-zsh**:
 
@@ -96,7 +103,7 @@ makepkg -si
 
 _**Reboot compositor**._
 
-## 4. Fonts
+## 5. Fonts
 
 1. **For emoji support**, install the following fonts:
 
@@ -115,7 +122,7 @@ _**Reboot compositor**._
    fc-cache -f -v
    ```
 
-## 5. Create symlinks for configurations
+## 6. Create symlinks for configurations
 
 If a folder exists, it is deleted before create symlinks:
 
@@ -131,7 +138,7 @@ ln -s ~/dot/.config/hypr ~/.config/
 ln -s ~/dot/.config/gammastep ~/.config/
 ```
 
-## 6. Utils for development (optional)
+## 7. Utils for development (optional)
 
 1. **Install [fnm](https://github.com/Schniz/fnm) node version manager**:
 
@@ -163,7 +170,7 @@ ln -s ~/dot/.config/gammastep ~/.config/
    npm install -g commitizen cz-conventional-changelog && echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
    ```
 
-## 7. Display manager (optional)
+## 8. Display manager (optional)
 
 1. **Install greetd**:
 
@@ -185,7 +192,7 @@ ln -s ~/dot/.config/gammastep ~/.config/
 
 _**For more customization**, read this [doc](https://github.com/apognu/tuigreet?tab=readme-ov-file)._
 
-## 8. [rEFInd](https://wiki.archlinux.org/title/REFInd) (optional)
+## 9. [rEFInd](https://wiki.archlinux.org/title/REFInd) (optional)
 
 rEFInd is more customizable than GRUB or systemd-boot; for example, you can change the theme, add icons, etc. It also allows the use of a mouse or touchpad, which is very useful when you have a wireless keyboard. Some features include:
 
@@ -298,7 +305,7 @@ For further customization options, consult the [ArchWiki rEFInd documentation](h
 
 ---
 
-## 9. [Plymouth](https://wiki.archlinux.org/title/plymouth) (optional)
+## 10. [Plymouth](https://wiki.archlinux.org/title/plymouth) (optional)
 
 Plymouth is a splash screen that hides the boot process, providing a more polished appearance. This section covers the installation and configuration of Plymouth.
 
@@ -358,7 +365,7 @@ Plymouth is a splash screen that hides the boot process, providing a more polish
       sudo plymouth-set-default-theme -R arch-darwin
       ```
 
-## 10. [Ollama](https://ollama.com/):
+## 11. [Ollama](https://ollama.com/) (Optional)
 
 1. **Install Ollama**:
    ```bash
