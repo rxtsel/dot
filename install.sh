@@ -3,7 +3,6 @@
 chmod +x ~/dot/.config/scripts/core/optional_packages.sh
 source ~/dot/.config/scripts/core/optional_packages.sh
 
-# Function to install yay
 install_yay() {
 	sudo pacman -S --noconfirm base-devel git &&
 		cd /opt/ &&
@@ -13,17 +12,14 @@ install_yay() {
 		makepkg -si --noconfirm
 }
 
-# Function to install pacman packages
 install_pacman_packages() {
 	sudo pacman -S --noconfirm neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent qt5-wayland qt5-wayland grim slurp mpv tofi thunar waybar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync imagemagick
 }
 
-# Function to install AUR packages using yay
 install_aur_packages() {
 	yay -S --noconfirm swww ffmpegthumbnailer xdg-desktop-portal-hyprland-git gammastep wlr-randr lightdm-git mkinitcpio-firmware
 }
 
-# Function to install Oh-my-zsh and plugins
 install_oh_my_zsh() {
 	sudo chsh -s $(which zsh) &&
 		source ~/.zshrc &&
@@ -32,7 +28,6 @@ install_oh_my_zsh() {
 	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 }
 
-# Function to install fonts
 install_fonts() {
 	sudo pacman -S --noconfirm noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-dejavu ttf-liberation ttf-font-awesome ttf-bitstream-vera gnu-free-fonts ttf-croscore ttf-droid ttf-ibm-plex ttf-liberation ttf-fira-sans ttf-fira-code ttf-firacode-nerd
 	cd /usr/share/fonts/ &&
@@ -45,7 +40,6 @@ install_fonts() {
 	fc-cache -f -v
 }
 
-# Function to create symlinks for configurations
 create_symlinks() {
 	[ -d ~/.config/kitty ] && rm -rf ~/.config/kitty
 	[ -d ~/.config/waybar ] && rm -rf ~/.config/waybar

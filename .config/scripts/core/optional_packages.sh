@@ -1,4 +1,3 @@
-# Function to install Utils for development (optional)
 install_dev_utils() {
 	read -p "Do you want to install utils for development? [Y/n]: " dev_utils_choice
 	dev_utils_choice=${dev_utils_choice:-Y} # Default choice is Y if user presses Enter
@@ -20,7 +19,6 @@ install_dev_utils() {
 	fi
 }
 
-# Function to install Display manager (optional)
 install_display_manager() {
 	read -p "Do you want to install display manager? [Y/n]: " display_manager_choice
 	display_manager_choice=${display_manager_choice:-Y} # Default choice is Y if user presses Enter
@@ -37,7 +35,6 @@ install_display_manager() {
 	fi
 }
 
-# Function to install rEFInd (optional)
 install_refind() {
 	read -p "Do you want to install rEFInd? [Y/n]: " refind_choice
 	refind_choice=${refind_choice:-Y} # Default choice is Y if user presses Enter
@@ -83,7 +80,6 @@ install_refind() {
 }
 
 # TODO: Add support for Plymouth
-# Function to install Plymouth (optional)
 # install_plymouth() {
 # 	read -p "Do you want to install Plymouth? [Y/n]: " plymouth_choice
 # 	plymouth_choice=${plymouth_choice:-Y} # Default choice is Y if user presses Enter
