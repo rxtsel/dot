@@ -105,9 +105,14 @@ window#waybar.empty #window {
  * Custom Quicklinks
  * ----------------------------------------------------- */
 
-#custom-chatgpt {
+#custom-chatgpt,
+#custom-music {
   min-width: 24px;
   color: #ffffff;
+}
+
+#custom-chatgpt {
+  margin-right: 5px;
 }
 
 /* -----------------------------------------------------
