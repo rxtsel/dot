@@ -53,7 +53,7 @@
 
   "custom/exit": {
     "format": "",
-    "on-click": "killall Hyprland",
+    "on-click": "hyprctl dispatch exit",
     "tooltip": false,
     "icon-size": 24
   },
