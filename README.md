@@ -1,4 +1,4 @@
-# After [minimal Arch linux setup](https://www.rxtsel.dev/en/blog/how-to-install-arch-linux-using-the-command-line/), then:
+# After [minimal Arch linux setup](https://www.rxtsel.dev/en/blog/how-to-install-arch-linux-using-the-command-line/), then
 
 My setup for Arch Linux with Hyprland, Waybar, Kitty, and other tools. This setup is for a desktop environment, but it can be adapted to a laptop. This setup is based on **solarized-dark** colors.
 
@@ -67,7 +67,7 @@ makepkg -si
 1. **Pacman packages**:
 
    ```bash
-   sudo pacman -S neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent qt5-wayland qt5-wayland grim slurp mpv tofi thunar waybar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync imagemagick mpv feh
+   sudo pacman -S neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent qt5-wayland qt5-wayland grim slurp mpv tofi thunar waybar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync imagemagick mpv feh vulkan-tools vulkan-radeon
    ```
 
 2. **AUR packages**:
@@ -227,10 +227,13 @@ Before installing rEFInd, you need to uninstall any existing bootloaders such as
 2. **Clean up the EFI directory**:
    Ensure no remnants of GRUB remain on your EFI partition.
    - Check the contents of the EFI partition:
+
      ```bash
      ls /boot/EFI
      ```
+
    - If a GRUB directory exists (such as `GRUB` or `arch_grub`), remove it:
+
      ```bash
      sudo rm -r /boot/EFI/[GRUB_directory]
      ```
@@ -339,9 +342,11 @@ Plymouth is a splash screen that hides the boot process, providing a more polish
 4. **Edit `refind.conf`**:
 
    1. Open `refind.conf`:
+
       ```bash
       sudo nvim /boot/EFI/refind/refind.conf
       ```
+
    2. Add `splash` after `"ro root=... add_efi_memmap` option, for example:
 
       ```bash
@@ -371,9 +376,11 @@ Plymouth is a splash screen that hides the boot process, providing a more polish
 ## 10. [Ollama](https://ollama.com/) (Optional)
 
 1. **Install Ollama**:
+
    ```bash
    curl -fsSL https://ollama.com/install.sh | sh
    ```
+
 2. **Install a model**:
 
    ```bash
@@ -385,6 +392,7 @@ Plymouth is a splash screen that hides the boot process, providing a more polish
    1. Install [Docker](https://docs.docker.com/engine/install/).
 
    2. Install Open WebUI:
+
       ```bash
       docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
       ```
