@@ -78,17 +78,3 @@ install_refind() {
 		echo "Skipping installation of rEFInd."
 	fi
 }
-
-# TODO: Add support for Plymouth
-# install_plymouth() {
-# 	read -p "Do you want to install Plymouth? [Y/n]: " plymouth_choice
-# 	plymouth_choice=${plymouth_choice:-Y} # Default choice is Y if user presses Enter
-#
-# 	if [ "$plymouth_choice" = "Y" ] || [ "$plymouth_choice" = "y" ]; then
-# 		# Commands to install Plymouth
-# 		echo "Installing Plymouth..."
-# 		# Add your commands here for installing Plymouth
-# 	else
-# 		echo "Skipping installation of Plymouth."
-# 	fi
-# }

@@ -13,7 +13,8 @@ install_yay() {
 }
 
 install_pacman_packages() {
-  sudo pacman -S --noconfirm neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent qt5-wayland qt5-wayland grim slurp mpv tofi thunar waybar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync imagemagick feh mpv vulkan-tools vulkan-radeo
+  sudo pacman -S --noconfirm neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent mpv thunar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync imagemagick mpv feh vulkan-tools vulkan-radeon
+
 }
 
 install_aur_packages() {
@@ -42,21 +43,18 @@ install_fonts() {
 
 create_symlinks() {
   [ -d ~/.config/kitty ] && rm -rf ~/.config/kitty
-  [ -d ~/.config/waybar ] && rm -rf ~/.config/waybar
-  [ -d ~/.config/hypr ] && rm -rf ~/.config/hypr
   [ -d ~/.config/gammastep ] && rm -rf ~/.config/gammastep
+  [ -d ~/.config/yazi ] && rm -rf ~/.config/yazi
+  [ -d ~/.config/zellij ] && rm -rf ~/.config/zellij
+  [ -d ~/.config/neofetch ] && rm -rf ~/.config/neofetch
   [ -f ~/.zshrc ] && rm -r ~/.zshrc
 
   ln -s ~/dot/.config/kitty ~/.config/
-  ln -s ~/dot/.config/waybar ~/.config/
-  ln -s ~/dot/.config/hypr ~/.config/
   ln -s ~/dot/.config/gammastep ~/.config/
+  ln -s ~/dot/.config/yazi ~/.config/
+  ln -s ~/dot/.config/zellij ~/.config/
+  ln -s ~/dot/.config/neofetch ~/.config/
   ln -s ~/dot/.zshrc ~/
-}
-
-add_bg() {
-  swww img ~/dot/wallpapers/default.png --no-resize
-
 }
 
 # Main script
@@ -69,7 +67,6 @@ install_aur_packages
 install_oh_my_zsh
 install_fonts
 create_symlinks
-add_bg
 
 echo "Base packages completed successfully!"
 
@@ -77,6 +74,5 @@ echo "Base packages completed successfully!"
 install_dev_utils
 install_display_manager
 install_refind
-# install_plymouth
 
 echo "Optional packages completed successfully!"

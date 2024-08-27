@@ -14,8 +14,6 @@ My setup for Arch Linux with Hyprland, Waybar, Kitty, and other tools. This setu
 - [Utils for development](#6-utils-for-development-optional) (optional)
 - [Display manager](#7-display-manager-optional) (optional)
 - [rEFInd](#8-refind-optional) (optional)
-- [Plymouth](#9-plymouth-optional) (optional)
-- [Ollama](#10-ollama-optional) (optional)
 
 ## Gallery
 
@@ -66,20 +64,22 @@ makepkg -si
 
 1. **Pacman packages**:
 
-   ```bash
-   sudo pacman -S neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent qt5-wayland qt5-wayland grim slurp mpv tofi thunar waybar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync imagemagick mpv feh vulkan-tools vulkan-radeon
-   ```
+    - **Base packages**:
+
+      ```bash
+      sudo pacman -S neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent mpv thunar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync imagemagick mpv feh vulkan-tools vulkan-radeon
+      ```
+
+    - **Wayland packages**:
+
+      ```bash
+      sudo pacman -S qt5-wayland qt5-wayland grim slurp tofi waybar
+      ```
 
 2. **AUR packages**:
 
    ```bash
    yay -S swww ffmpegthumbnailer xdg-desktop-portal-hyprland-git gammastep wlr-randr lightdm-git mkinitcpio-firmware
-   ```
-
-3. **Add background image**:
-
-   ```bash
-   swww img ~/dot/wallpapers/default.png --no-resize
    ```
 
 ## 3. Oh-my-zsh
@@ -127,18 +127,22 @@ _**Reboot compositor**._
 
 ## 5. Create symlinks for configurations
 
-If a folder exists, it is deleted before create symlinks:
+If a folder exists, it is deleted before create symlinks.
+
+> **Note**: Only base configurations are included. You can add more configurations if you want. With `ln -s ...` command.
 
 ```bash
 [ -d ~/.config/kitty ] && rm -rf ~/.config/kitty
-[ -d ~/.config/waybar ] && rm -rf ~/.config/waybar
-[ -d ~/.config/hypr ] && rm -rf ~/.config/hypr
 [ -d ~/.config/gammastep ] && rm -rf ~/.config/gammastep
+[ -d ~/.config/yazi ] && rm -rf ~/.config/yazi
+[ -d ~/.config/zellij ] && rm -rf ~/.config/zellij
+[ -d ~/.config/neofetch ] && rm -rf ~/.config/neofetch
 
 ln -s ~/dot/.config/kitty ~/.config/
-ln -s ~/dot/.config/waybar ~/.config/
-ln -s ~/dot/.config/hypr ~/.config/
 ln -s ~/dot/.config/gammastep ~/.config/
+ln -s ~/dot/.config/yazi ~/.config/
+ln -s ~/dot/.config/zellij ~/.config/
+ln -s ~/dot/.config/neofetch ~/.config/
 ```
 
 ## 6. Utils for development (optional)
@@ -308,91 +312,3 @@ menuentry "Windows 11" {
 > Be sure to edit `refind.conf` to reflect your specific hardware and partitioning setup.
 
 For further customization options, consult the [ArchWiki rEFInd documentation](https://wiki.archlinux.org/title/REFInd).
-
----
-
-## 9. [Plymouth](https://wiki.archlinux.org/title/plymouth) (optional)
-
-Plymouth is a splash screen that hides the boot process, providing a more polished appearance. This section covers the installation and configuration of Plymouth.
-
-1. **Install Plymouth**:
-
-   ```bash
-   yay -S plymouth
-   ```
-
-2. **Edit `/etc/mkinitcpio.conf`**:
-
-   ```bash
-   sudo nvim /etc/mkinitcpio.conf
-   ```
-
-   1. Add `plymouth` to the `HOOKS` array after `udev`:
-
-      ```bash
-      HOOKS=(base udev plymouth ...)
-      ```
-
-3. **Regenerate the initramfs**:
-
-   ```bash
-   sudo mkinitcpio -p linux
-   ```
-
-4. **Edit `refind.conf`**:
-
-   1. Open `refind.conf`:
-
-      ```bash
-      sudo nvim /boot/EFI/refind/refind.conf
-      ```
-
-   2. Add `splash` after `"ro root=... add_efi_memmap` option, for example:
-
-      ```bash
-      options  "root=PARTUUID=<YOUR_PARTUUID> rw add_efi_memmap splash"
-      ```
-
-5. **Setup plymouth theme**:
-
-   1. Install the theme:
-
-      ```bash
-      yay -S plymouth-theme-arch-darwin
-      ```
-
-   2. List available themes:
-
-      ```bash
-        sudo plymouth-set-default-theme -l
-      ```
-
-   3. Set the theme:
-
-      ```bash
-      sudo plymouth-set-default-theme -R arch-darwin
-      ```
-
-## 10. [Ollama](https://ollama.com/) (Optional)
-
-1. **Install Ollama**:
-
-   ```bash
-   curl -fsSL https://ollama.com/install.sh | sh
-   ```
-
-2. **Install a model**:
-
-   ```bash
-   ollama pull llama3
-   ```
-
-3. **Install [Open WebUI](https://docs.openwebui.com/)**:
-
-   1. Install [Docker](https://docs.docker.com/engine/install/).
-
-   2. Install Open WebUI:
-
-      ```bash
-      docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
-      ```
