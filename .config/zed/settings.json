@@ -1,0 +1,41 @@
+{
+  "assistant": {
+    "dock": "right",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
+  "buffer_font_size": 19,
+  "buffer_font_family": "MonaspiceNe Nerd Font Mono",
+  "buffer_line_height": { "custom": 1.25 },
+  "chat_panel": { "dock": "right" },
+  "collaboration_panel": { "dock": "right" },
+  "git": { "inline_blame": { "enabled": false } },
+  "indent_guides": { "enabled": false },
+  "outline_panel": { "dock": "right" },
+  "project_panel": { "dock": "right", "scrollbar": { "show": "never" } },
+  "preview_tabs": { "enable_preview_from_code_navigation": false },
+  "relative_line_numbers": true,
+  "theme": "Solarized Dark",
+  "tabs": { "git_status": true },
+  "ui_font_size": 19,
+  "vim_mode": true,
+  "experimental.theme_overrides": {
+    "background.appearance": "blurred",
+    "background": "#00141969",
+    "editor.background": "#00141969",
+    "editor.gutter.background": "#00141969",
+    "tab_bar.background": "#00141969",
+    "terminal.background": "#001419",
+    "toolbar.background": "#00141969",
+    "tab.active_background": "#002b36ff",
+    "tab.inactive_background": "#00141969",
+    "status_bar.background": "#00141969",
+    "title_bar.background": "#00141969",
+    "panel.background": "#00141969",
+    "border.variant": "#00141969",
+    "scrollbar.track.border": "#00141969"
+  }
+}
