@@ -129,7 +129,7 @@ _**Reboot compositor**._
 
 If a folder exists, it is deleted before create symlinks.
 
-> **Note**: Only base configurations are included. You can add more configurations if you want. With `ln -s ...` command.
+> **Note**: Only base configurations are included. You can add more configurations if you want. With `ln -s` command.
 
 ```bash
 [ -d ~/.config/kitty ] && rm -rf ~/.config/kitty
@@ -137,12 +137,14 @@ If a folder exists, it is deleted before create symlinks.
 [ -d ~/.config/yazi ] && rm -rf ~/.config/yazi
 [ -d ~/.config/zellij ] && rm -rf ~/.config/zellij
 [ -d ~/.config/neofetch ] && rm -rf ~/.config/neofetch
+[ -f ~/.zshrc ] && rm -r ~/.zshrc
 
 ln -s ~/dot/.config/kitty ~/.config/
 ln -s ~/dot/.config/gammastep ~/.config/
 ln -s ~/dot/.config/yazi ~/.config/
 ln -s ~/dot/.config/zellij ~/.config/
 ln -s ~/dot/.config/neofetch ~/.config/
+ln -s ~/dot/.zshrc ~/
 ```
 
 ## 6. Utils for development (optional)
