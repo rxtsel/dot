@@ -10,15 +10,32 @@
   "buffer_font_size": 19,
   "buffer_font_family": "MonaspiceNe Nerd Font Mono",
   "buffer_line_height": { "custom": 1.25 },
-  "chat_panel": { "dock": "right" },
-  "collaboration_panel": { "dock": "right" },
+  "centered_layout": {
+    "left_padding": 0.2,
+    "right_padding": 0.2
+  },
+  "collaboration_panel": { "dock": "left" },
+  "chat_panel": { "dock": "left" },
   "git": { "inline_blame": { "enabled": false } },
-  "indent_guides": { "enabled": false },
+  "indent_guides": { "enabled": true, "coloring": "indent_aware" },
+  "notification_panel": { "dock": "left" },
   "outline_panel": { "dock": "right" },
-  "project_panel": { "dock": "right", "scrollbar": { "show": "never" } },
+  "project_panel": {
+    "button": true,
+    "dock": "right",
+    "git_status": true,
+    "scrollbar": {
+      "show": "never"
+    }
+  },
   "preview_tabs": { "enable_preview_from_code_navigation": false },
   "relative_line_numbers": true,
   "theme": "Solarized Dark",
+  "terminal": {
+    "env": {
+      "EDITOR": "zed --wait"
+    }
+  },
   "tabs": { "git_status": true },
   "ui_font_size": 19,
   "vim_mode": true,
