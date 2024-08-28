@@ -17,7 +17,7 @@
   "collaboration_panel": { "dock": "left" },
   "chat_panel": { "dock": "left" },
   "git": { "inline_blame": { "enabled": false } },
-  "indent_guides": { "enabled": true, "coloring": "indent_aware" },
+  "indent_guides": { "enabled": false, "coloring": "indent_aware" },
   "notification_panel": { "dock": "left" },
   "outline_panel": { "dock": "right" },
   "project_panel": {
@@ -30,7 +30,7 @@
   },
   "preview_tabs": { "enable_preview_from_code_navigation": false },
   "relative_line_numbers": true,
-  "theme": "Solarized Dark",
+  "theme": "NeoSolarized Dark",
   "terminal": {
     "env": {
       "EDITOR": "zed --wait"
@@ -45,14 +45,11 @@
     "editor.background": "#00141969",
     "editor.gutter.background": "#00141969",
     "tab_bar.background": "#00141969",
-    "terminal.background": "#001419",
     "toolbar.background": "#00141969",
-    "tab.active_background": "#002b36ff",
     "tab.inactive_background": "#00141969",
     "status_bar.background": "#00141969",
     "title_bar.background": "#00141969",
     "panel.background": "#00141969",
-    "border.variant": "#00141969",
     "scrollbar.track.border": "#00141969"
   }
 }
