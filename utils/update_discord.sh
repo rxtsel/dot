@@ -9,8 +9,8 @@ remove_old_version() {
 
 install_new_version() {
   cd ~/Downloads/ &&
-    wget "https://discord.com/api/download?platform=linux&format=tar.gz" &&
-    tar -xvzf discord-*.tar.gz &&
+    wget -O discord.tar.gz "https://discord.com/api/download?platform=linux&format=tar.gz" &&
+    tar -xvzf discord.tar.gz &&
     sudo mv Discord /opt/discord &&
     sudo cp -rp /opt/discord/ /usr/share/ &&
     sudo ln -sf /opt/discord/Discord /usr/bin/discord &&
