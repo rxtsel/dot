@@ -1,5 +1,10 @@
 #!/bin/bash
 
+remove_download() {
+  rm -rf ~/Downloads/discord.tar.gz
+  rm -rf ~/Downloads/Discord
+}
+
 remove_old_version() {
   sudo rm -rf /opt/discord
   sudo rm -rf /usr/bin/discord
@@ -18,7 +23,9 @@ install_new_version() {
 }
 
 echo "Removing old version of Discord..."
-remove_old_version
-echo "Installing new version of Discord..."
-install_new_version
-echo "Done! :)"
+remove_old_version &&
+  echo "Installing new version of Discord..."
+install_new_version &&
+  echo "Removing downloaded files..."
+remove_download &&
+  echo "Done! :)"
