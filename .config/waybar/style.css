@@ -128,7 +128,8 @@ window#waybar.empty #window {
  * Hardware Group
  * ----------------------------------------------------- */
 #memory,
-#cpu {
+#cpu,
+#disk {
   font-size: 14px;
   font-weight: normal;
   color: #ffffff;

@@ -68,12 +68,16 @@
   },
 
   "cpu": {
-    "format": "CPU {usage}% ",
+    "format": " CPU {usage}% ",
     "on-click": "kitty -e htop"
   },
 
   "memory": {
     "format": " MEM {}% "
+  },
+
+  "disk": {
+    "format": "DISK {}% "
   },
 
   "network": {

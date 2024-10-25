@@ -39,6 +39,6 @@
 
   "group/hardware": {
     "orientation": "horizontal",
-    "modules": ["cpu", "memory"]
+    "modules": ["disk", "cpu", "memory"]
   }
 }
