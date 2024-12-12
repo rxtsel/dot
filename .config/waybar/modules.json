@@ -77,7 +77,7 @@
   },
 
   "disk": {
-    "format": "DISK {}% "
+    "format": "DISK {percentage_used}% "
   },
 
   "network": {
