@@ -64,17 +64,17 @@ makepkg -si
 
 1. **Pacman packages**:
 
-    - **Base packages**:
+   - **Base packages**:
 
-      ```bash
-      sudo pacman -S neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent mpv thunar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync imagemagick mpv feh vulkan-tools vulkan-radeon
-      ```
+     ```bash
+     sudo pacman -S neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent mpv thunar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync imagemagick mpv feh vulkan-tools vulkan-radeon
+     ```
 
-    - **Wayland packages**:
+   - **Wayland packages**:
 
-      ```bash
-      sudo pacman -S qt5-wayland qt5-wayland grim slurp tofi waybar
-      ```
+     ```bash
+     sudo pacman -S qt5-wayland qt5-wayland grim slurp tofi waybar
+     ```
 
 2. **AUR packages**:
 
@@ -111,7 +111,7 @@ _**Reboot compositor**._
 1. **For emoji support**, install the following fonts:
 
    ```bash
-   sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-dejavu ttf-liberation ttf-font-awesome ttf-bitstream-vera gnu-free-fonts ttf-croscore ttf-droid ttf-ibm-plex ttf-liberation ttf-fira-sans ttf-fira-code ttf-firacode-nerd
+   sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji
    ```
 
 2. **Custom fonts** for waybar, kitty, etc:
@@ -232,6 +232,7 @@ Before installing rEFInd, you need to uninstall any existing bootloaders such as
 
 2. **Clean up the EFI directory**:
    Ensure no remnants of GRUB remain on your EFI partition.
+
    - Check the contents of the EFI partition:
 
      ```bash
