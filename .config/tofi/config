@@ -6,7 +6,7 @@
 	# characters not in the chosen font will fail to render.
 	#
 	# Otherwise, fonts are interpreted in Pango format.
-	font = "San Francisco Pro Display"
+	font = "Noto Sans"
 
 	# Point size of text.
 	font-size = 18
@@ -160,7 +160,7 @@
 ### Window theming
 #
 	# Width and height of the window. Can be pixels or a percentage.
-	width = 420
+	width = 600
 	height = 220
 
 	# Window background color
