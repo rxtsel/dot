@@ -53,7 +53,7 @@
 
   "custom/exit": {
     "format": "",
-    "on-click": "hyprctl dispatch exit",
+    "on-click": "wlogout",
     "tooltip": false,
     "icon-size": 24
   },

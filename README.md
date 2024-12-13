@@ -73,7 +73,7 @@ makepkg -si
    - **Wayland packages**:
 
      ```bash
-     sudo pacman -S qt5-wayland qt5-wayland grim slurp tofi waybar
+     sudo pacman -S qt5-wayland qt5-wayland grim slurp tofi waybar wlogout
      ```
 
 2. **AUR packages**:
