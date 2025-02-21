@@ -23,6 +23,8 @@ alias zd="zellij delete-all-sessions"
 alias zk="zellij kill-all-sessions"
 alias za="zellij a"
 alias zl="zellij list-sessions"
+alias ls='exa -la --icons'
+
 
 # fnm
 FNM_PATH="/home/rxtsel/.local/share/fnm"
