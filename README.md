@@ -39,8 +39,6 @@ My setup for Arch Linux with Hyprland, Waybar, Kitty, and other tools. This setu
 
 ## 1. Install paru (AUR helper)
 
-**Replace `<username>` with your username**.
-
 ```bash
 sudo pacman -S --needed base-devel
 git clone https://aur.archlinux.org/paru.git
