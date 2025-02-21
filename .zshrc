@@ -24,6 +24,7 @@ alias zk="zellij kill-all-sessions"
 alias za="zellij a"
 alias zl="zellij list-sessions"
 alias ls='exa -la --icons'
+alias cat='bat --paging=never'
 
 
 # fnm
@@ -43,3 +44,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Bat theme
+export BAT_THEME="Solarized (dark)"
