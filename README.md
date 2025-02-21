@@ -12,8 +12,7 @@ My setup for Arch Linux with Hyprland, Waybar, Kitty, and other tools. This setu
 - [Fonts](#4-fonts)
 - [Create symlinks for configurations](#5-create-symlinks-for-configurations)
 - [Utils for development](#6-utils-for-development-optional) (optional)
-- [Display manager](#7-display-manager-optional) (optional)
-- [rEFInd](#8-refind-optional) (optional)
+- [rEFInd](#7-refind-optional) (optional)
 
 ## Gallery
 
@@ -165,29 +164,7 @@ ln -s ~/dot/.zshrc ~/
    npm install -g commitizen cz-conventional-changelog && echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
    ```
 
-## 7. Display manager (optional)
-
-1. **Install greetd**:
-
-   ```bash
-   sudo pacman -S greetd-tuigreet
-   ```
-
-2. **Enable greetd service**:
-
-   ```bash
-   sudo systemctl enable greetd.service
-   ```
-
-3. **Add config**:
-
-   ```bash
-   sudo rm /etc/greetd/config.toml && sudo ln -s ~/dot/custom/tuigreet/config.toml /etc/greetd/
-   ```
-
-_**For more customization**, read this [doc](https://github.com/apognu/tuigreet?tab=readme-ov-file)._
-
-## 8. [rEFInd](https://wiki.archlinux.org/title/REFInd) (optional)
+## 7. [rEFInd](https://wiki.archlinux.org/title/REFInd) (optional)
 
 rEFInd is more customizable than GRUB or systemd-boot; for example, you can change the theme, add icons, etc. It also allows the use of a mouse or touchpad, which is very useful when you have a wireless keyboard. Some features include:
 
