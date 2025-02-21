@@ -64,7 +64,7 @@ makepkg -si
 2. **AUR packages**:
 
    ```bash
-   paru -S swww ffmpegthumbnailer xdg-desktop-portal-hyprland-git gammastep wlr-randr lightdm-git mkinitcpio-firmware
+   paru -S swww ffmpegthumbnailer xdg-desktop-portal-hyprland-git gammastep wlr-randr lightdm-git mkinitcpio-firmware 7zip
    ```
 
 ## 3. Oh-my-zsh
