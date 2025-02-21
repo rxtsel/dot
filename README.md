@@ -6,7 +6,7 @@ My setup for Arch Linux with Hyprland, Waybar, Kitty, and other tools. This setu
 
 - [Gallery](#gallery)
 - [Installation](#installation)
-- [Install yay (AUR helper)](#1-install-yay-aur-helper)
+- [Install paru (AUR helper)](#1-install-paru-aur-helper)
 - [Install dependencies](#2-install-dependencies)
 - [Oh-my-zsh](#3-oh-my-zsh)
 - [Fonts](#4-fonts)
@@ -37,26 +37,14 @@ My setup for Arch Linux with Hyprland, Waybar, Kitty, and other tools. This setu
    git clone git@github.com:rxtsel/dot.git ~/
    ```
 
-2. **Choose between `automatic` or `manual` installation**:
-
-   - **Automatic installation**:
-
-     ```bash
-     chmod +x ~/dot/install.sh && ~/dot/install.sh
-     ```
-
-   - **Manual installation**: Follow the steps below.
-
-## 1. Install yay (AUR helper)
+## 1. Install paru (AUR helper)
 
 **Replace `<username>` with your username**.
 
 ```bash
-sudo pacman -S base-devel git &&
-cd /opt/ &&
-sudo git clone https://aur.archlinux.org/yay-git.git &&
-sudo chown -R <username>:<username> yay-git/ &&
-cd yay-git &&
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
 makepkg -si
 ```
 
@@ -79,7 +67,7 @@ makepkg -si
 2. **AUR packages**:
 
    ```bash
-   yay -S swww ffmpegthumbnailer xdg-desktop-portal-hyprland-git gammastep wlr-randr lightdm-git mkinitcpio-firmware
+   paru -S swww ffmpegthumbnailer xdg-desktop-portal-hyprland-git gammastep wlr-randr lightdm-git mkinitcpio-firmware
    ```
 
 ## 3. Oh-my-zsh
