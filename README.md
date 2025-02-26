@@ -52,7 +52,7 @@ makepkg -si
    - **Base packages**:
 
      ```bash
-     sudo pacman -S neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent mpv thunar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync imagemagick mpv feh vulkan-tools vulkan-radeon fzf silicon bat exa
+     sudo pacman -S neovim kitty neofetch chromium yazi ntfs-3g glib2 gvfs pipewire wireplumber polkit-kde-agent mpv thunar ark bluez bluez-utils ripgrep xsel wl-clipboard pavucontrol unzip zsh swaync imagemagick mpv feh vulkan-tools vulkan-radeon fzf silicon bat exa thunderbird
      ```
 
    - **Wayland packages**:
@@ -64,7 +64,7 @@ makepkg -si
 2. **AUR packages**:
 
    ```bash
-   paru -S swww ffmpegthumbnailer xdg-desktop-portal-hyprland-git gammastep wlr-randr lightdm-git mkinitcpio-firmware 7zip
+   paru -S swww ffmpegthumbnailer xdg-desktop-portal-hyprland-git gammastep wlr-randr lightdm-git mkinitcpio-firmware 7zip birdtray
    ```
 
 ## 3. Oh-my-zsh
