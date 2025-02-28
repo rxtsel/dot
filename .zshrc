@@ -7,6 +7,7 @@ plugins=(
 	git
 	zsh-syntax-highlighting
 	zsh-autosuggestions
+  zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -23,7 +24,8 @@ alias zd="zellij delete-all-sessions"
 alias zk="zellij kill-all-sessions"
 alias za="zellij a"
 alias zl="zellij list-sessions"
-alias ls='exa -la --icons'
+alias ls='exa --icons'
+alias l='exa --icons'
 alias cat='bat --paging=never'
 
 
@@ -47,3 +49,10 @@ esac
 
 # Bat theme
 export BAT_THEME="Solarized (dark)"
+
+# Android
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
