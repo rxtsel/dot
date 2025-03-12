@@ -1,5 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
+
 ZSH_THEME="robbyrussell"
 
 plugins=(
@@ -7,7 +8,6 @@ plugins=(
 	git
 	zsh-syntax-highlighting
 	zsh-autosuggestions
-  zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -39,14 +39,6 @@ export PATH=$HOME/.local/bin:$PATH
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# pnpm
-export PNPM_HOME="/home/rxtsel/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 # Bat theme
 export BAT_THEME="Solarized (dark)"
 
@@ -56,3 +48,12 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
+
+# pnpm
+export PNPM_HOME="/home/rxtsel/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export PATH=$PATH:/opt/datagrip/bin
