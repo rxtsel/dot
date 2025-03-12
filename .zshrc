@@ -37,8 +37,6 @@ if [ -d "$FNM_PATH" ]; then
 fi
 export PATH=$HOME/.local/bin:$PATH
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 # Bat theme
 export BAT_THEME="Solarized (dark)"
 
