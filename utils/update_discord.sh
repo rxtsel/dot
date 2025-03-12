@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Check if the script is running as root
+no_root() {
+  if [ "$EUID" -eq 0 ]; then
+    echo "Please do not run as root"
+    exit
+  fi
+}
+
 remove_download() {
   [ -d ~/Downloads/discord.tar.gz ] && rm -rf ~/Downloads/discord.tar.gz
   [ -d ~/Downloads/Discord ] && rm -rf ~/Downloads/Discord
@@ -22,7 +30,8 @@ install_new_version() {
     sudo cp /opt/discord/discord.desktop /usr/share/applications/discord.desktop
 }
 
-echo "Removing old version of Discord..."
+no_root &&
+  echo "Removing old version of Discord..."
 remove_old_version &&
   echo "Installing new version of Discord..."
 install_new_version &&
