@@ -1,15 +1,15 @@
 #!/bin/bash
 
 remove_download() {
-  rm -rf ~/Downloads/discord.tar.gz
-  rm -rf ~/Downloads/Discord
+  [ -d ~/Downloads/discord.tar.gz ] && rm -rf ~/Downloads/discord.tar.gz
+  [ -d ~/Downloads/Discord ] && rm -rf ~/Downloads/Discord
 }
 
 remove_old_version() {
-  sudo rm -rf /opt/discord
-  sudo rm -rf /usr/bin/discord
-  sudo rm -rf /usr/share/discord
-  sudo rm -rf /usr/share/applications/discord.desktop
+  [ -d /opt/discord ] && sudo rm -rf /opt/discord
+  [ -d /usr/bin/discord ] && sudo rm -rf /usr/bin/discord
+  [ -d /usr/share/discord ] && sudo rm -rf /usr/share/discord
+  [ -d /usr/share/applications/discord.desktop ] && sudo rm -rf /usr/share/applications/discord.desktop
 }
 
 install_new_version() {
