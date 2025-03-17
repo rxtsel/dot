@@ -9,6 +9,7 @@ cursor-style-blink = false
 cursor-invert-fg-bg = true
 mouse-hide-while-typing = true
 gtk-tabs-location = bottom
+title = " "
 
 # MacOS-specific settings
 macos-titlebar-style = tabs
