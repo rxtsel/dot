@@ -10,14 +10,15 @@
       "default": ""
     }
   },
-
   "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 24,
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
-    "ignore-list": ["kitty"],
+    "ignore-list": [
+      "kitty"
+    ],
     "app_ids-mapping": {
       "chromium": "chromium-browser"
     },
@@ -27,7 +28,6 @@
       "Foot Server": "Terminal"
     }
   },
-
   "hyprland/window": {
     "rewrite": {
       "(.*) - Brave": "$1",
@@ -36,50 +36,41 @@
     },
     "separate-outputs": true
   },
-
   "custom/chatgpt": {
     "format": "",
     "on-click": "chromium --app=https://chat.openai.com",
     "tooltip": false,
     "icon-size": 24
   },
-
   "custom/music": {
     "format": "󰎇",
     "on-click": "chromium --app=https://music.apple.com/co/browse",
     "tooltip": false,
     "icon-size": 24
   },
-
   "custom/exit": {
     "format": "",
     "on-click": "wlogout",
     "tooltip": false,
     "icon-size": 24
   },
-
   "tray": {
     "icon-size": 16,
     "spacing": 14
   },
-
   "clock": {
     "format": "{:%a %d %B %H:%M}"
   },
-
   "cpu": {
     "format": " CPU {usage}% ",
-    "on-click": "kitty -e htop"
+    "on-click": "ghostty -e btop"
   },
-
   "memory": {
     "format": " MEM {}% "
   },
-
   "disk": {
     "format": "DISK {percentage_used}% "
   },
-
   "network": {
     "format-wifi": " ",
     "format-ethernet": "󱘖",
@@ -90,7 +81,6 @@
     "tooltip": true,
     "icon-size": 24
   },
-
   "pulseaudio": {
     "format": "{icon}",
     "format-muted": "󰝟",
@@ -103,29 +93,30 @@
       "headphone": "",
       "hands-free": "",
       "headset": "",
-      "default": [" ", " ", " "]
+      "default": [
+        " ",
+        " ",
+        " "
+      ]
     },
     "icon-size": 24
   },
-
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
     "format-connected": "󰂯",
-    "on-click": "blueman-manager",
+    "on-click": "ghostty -e bluetui",
     "tooltip-format": "{device_alias}",
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
     "icon-size": 24
   },
-
   "user": {
     "format": "{user}",
     "interval": 60,
     "icon": false,
     "icon-size": 24
   },
-
   "hyprland/language": {
     "format": "{}",
     "format-en": "DV",
