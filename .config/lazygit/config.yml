@@ -1,0 +1,90 @@
+customCommands:
+  - key: <c-a>
+    description: Pick AI commit
+    context: global
+    prompts:
+      - type: menuFromCommand
+        title: Select AI Commit Message
+        key: CommitMsg
+        command: |
+          bash -c "
+          # Check for staged changes
+          diff=\$(git diff --cached)
+          if [ -z \"\$diff\" ]; then
+            echo \"No changes in staging. Add changes first.\"
+            exit 1
+          fi
+
+          # Get recent commit history for reference
+          recent_commits=\$(git log -n 10 --pretty=format:\"%h %s\")
+
+          # Generate AI commit suggestions
+          # Examples:
+            # ollama run qwen2.5-coder:1.5b
+            # aichat --model ollama:qwen2.5-coder:1.5b
+            # aichat --model github:gpt-4o-mini
+
+          aichat --model github:gpt-4o-mini \"
+
+          Please suggest 10 commit messages, given the following diff:
+
+          \\\`\\\`\\\`diff
+          \$diff
+          \\\`\\\`\\\`
+
+          **Criteria:**
+          1. **Format:** Each commit message must follow the conventional commits format, which is \\\`<type>: <description>\\\`.
+          2. **Relevance:** Avoid mentioning a module name unless it's directly relevant to the change.
+          3. **Clarity and Conciseness:** Each message should clearly and concisely convey the change made.
+          4. **No Enumeration:** Each suggestion should not contain enumeration.
+          5. **Don't start with symbols. Only provide the list of messages. Don't add anything at the beginning or end. Only use \`<type>: <description>\` format.**
+
+          **Commit Message Examples:**
+          -   fix(auth): add password regex pattern
+          -   feat(api): add new test cases
+          -   style(components): remove unused imports
+          -   refactor(utils): extract common code to \\\`utils/wait.ts\\\`
+          -   build(webpack): update webpack configuration
+          -   chore(deps): update dependencies
+          -   chore: update project configuration
+          -   ci(github): add GitHub Actions workflow
+          -   docs(readme): update README with installation steps
+          -   perf(images): optimize image loading process
+          -   revert(core): revert commit abc1234
+          -   test(auth): add unit tests for auth module
+
+          **Instructions:**
+          -   Take a moment to understand the changes made in the diff.
+          -   Think about the impact of these changes on the project (e.g., bug fixes, new features, performance improvements, code refactoring, documentation updates). It's critical to my career you abstract the changes to a higher level and not just describe the code changes.
+          -   Generate commit messages that accurately describe these changes, ensuring they are helpful to someone reading the project's history.
+          -   Remember, a well-crafted commit message can significantly aid in the maintenance and understanding of the project over time.
+          -   If multiple changes are present, make sure you capture them all in each commit message.
+
+          Keep in mind you will suggest 10 commit messages. Only 1 will be used. It's better to push yourself (esp to synthesize to a higher level) and maybe wrong about some of the 1 commits because only one needs to be good. I'm looking for your best commit, not the best average commit. It's better to cover more scenarios than include a lot of overlap.
+
+          **Recent Commits on Repo for Reference:**
+          \\\`\\\`\\\`
+          \$recent_commits
+          \\\`\\\`\\\`
+
+          Write your 10 commit messages below, in the format \\\`<message>\\\`, \\\`<message>\\\`, etc:\" "
+    command: |
+      # Create temporary file for editing the commit message
+      commit_msg_file=$(mktemp)
+      echo "{{.Form.CommitMsg}}" > "$commit_msg_file"
+
+      # Open the commit message in editor
+      ${EDITOR:-vim} "$commit_msg_file"
+
+      # Commit if message is not empty
+      if [ -s "$commit_msg_file" ]; then
+          git commit -F "$commit_msg_file"
+      else
+          echo "Commit message is empty, commit aborted."
+      fi
+
+      # Clean up temporary file
+      rm -f "$commit_msg_file"
+    subprocess: true
+    stream: true
+    showOutput: true
