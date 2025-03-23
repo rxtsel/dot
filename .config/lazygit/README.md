@@ -17,6 +17,9 @@
 
 ## Previews
 
+![1742755066_grim](https://github.com/user-attachments/assets/b152bd8e-2413-45ff-ab59-760b14fd3ddb)
+
+
 ### Lazygit UI Integration
 
 - 🟩 Fast response time  
