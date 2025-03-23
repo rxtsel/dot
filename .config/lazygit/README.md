@@ -3,10 +3,10 @@
 **Requirements:**
 
 - [Lazygit](https://github.com/jesseduffield/lazygit)
-- [Ollama](https://ollama.com/)
+- [Ollama](https://ollama.com/) (Optional, for local LLMs)
 - [AIChat](https://github.com/sigoden/aichat) (Optional)
 - [fzf](https://github.com/junegunn/fzf) (Optional, if you prefer using fzf to select the commit)
-- A local LLaMA model or API keys for OpenAI, Claude, Mistral, Gemma, etc.
+- **A local LLaMA model or API keys** for OpenAI, Claude, Mistral, Gemma, etc.
 
 **TODOs:**
 
@@ -18,7 +18,6 @@
 ## Previews
 
 ![1742755066_grim](https://github.com/user-attachments/assets/b152bd8e-2413-45ff-ab59-760b14fd3ddb)
-
 
 ### Lazygit UI Integration
 
