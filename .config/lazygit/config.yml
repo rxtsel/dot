@@ -37,7 +37,7 @@ customCommands:
           2. **Relevance:** Avoid mentioning a module name unless it's directly relevant to the change.
           3. **Clarity and Conciseness:** Each message should clearly and concisely convey the change made.
           4. **No Enumeration:** Each suggestion should not contain enumeration.
-          5. **Don't start with symbols. Only provide the list of messages. Don't add anything at the beginning or end. Only use \`<type>: <description>\` format.**
+          5. **Don't start with symbols. Only provide the list of messages. Don't add anything at the beginning or end. Don't use comma or dots to start or end. Only use \\\`<type>: <description>\\\` format.**
 
           **Commit Message Examples:**
           -   fix(auth): add password regex pattern
