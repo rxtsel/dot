@@ -36,12 +36,6 @@
     },
     "separate-outputs": true
   },
-  "custom/chatgpt": {
-    "format": "",
-    "on-click": "chromium --app=https://chat.openai.com",
-    "tooltip": false,
-    "icon-size": 24
-  },
   "custom/music": {
     "format": "󰎇",
     "on-click": "chromium --app=https://music.apple.com/co/browse",
