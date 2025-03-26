@@ -42,7 +42,6 @@ keybind = alt+right=next_tab
 
 # Zellij-like prefix controlled keybindings
 keybind = alt+t>n=new_tab
-keybind = alt+b>f=toggle_fullscreen
 
 # Splits
 keybind = alt+p>r=new_split:right
@@ -59,6 +58,10 @@ keybind = alt+p>left=goto_split:left
 keybind = alt+p>down=goto_split:bottom
 keybind = alt+p>up=goto_split:top
 keybind = alt+p>right=goto_split:right
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:bottom
+keybind = alt+k=goto_split:top
+keybind = alt+l=goto_split:right
 
 # Tabs navigation
 keybind = alt+t>l=next_tab
