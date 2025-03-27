@@ -41,7 +41,11 @@
     "spacing": 14
   },
   "clock": {
-    "format": "{:%a %d %B %H:%M}"
+    "format": "{:%a %d %B %H:%M}",
+    "tooltip": false,
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   },
   "cpu": {
     "format": " CPU {usage}% ",
@@ -103,13 +107,5 @@
     "format": "{}",
     "format-en": "DV",
     "format-es": "SP"
-  },
-  "custom/notification": {
-    "tooltip": false,
-    "format": "",
-    "return-type": "json",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
   }
 }
