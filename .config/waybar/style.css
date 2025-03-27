@@ -108,15 +108,6 @@ window#waybar.empty #window {
 }
 
 /* -----------------------------------------------------
- * Custom Exit
- * ----------------------------------------------------- */
-#custom-exit {
-  min-width: 24px;
-  color: #ffffff;
-  margin-right: 5px;
-}
-
-/* -----------------------------------------------------
  * Hardware Group
  * ----------------------------------------------------- */
 #memory,
@@ -235,6 +226,10 @@ label:focus {
   margin-right: 4px;
   font-size: 14px;
   font-weight: 600;
+}
+
+#custom-notification {
+  font-family: "DankMono Nerd Font Mono";
 }
 
 /* -----------------------------------------------------
