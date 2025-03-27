@@ -102,11 +102,6 @@ window#waybar.empty #window {
  * Custom Quicklinks
  * ----------------------------------------------------- */
 
-#custom-music {
-  min-width: 24px;
-  color: #ffffff;
-}
-
 /* -----------------------------------------------------
  * Hardware Group
  * ----------------------------------------------------- */
@@ -127,7 +122,6 @@ window#waybar.empty #window {
   color: #ffffff;
   font-weight: normal;
   transition: background-color 0.5s ease;
-  margin-right: 15px;
 }
 
 /* -----------------------------------------------------
@@ -228,10 +222,11 @@ label:focus {
   font-weight: 600;
 }
 
-#custom-notification {
-  font-family: "DankMono Nerd Font Mono";
-}
-
 /* -----------------------------------------------------
  * Custom
  * ----------------------------------------------------- */
+#custom-notification {
+  min-width: 24px;
+  color: #ffffff;
+  margin-left: 2px;
+}

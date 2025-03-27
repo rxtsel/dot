@@ -2,22 +2,19 @@
   "position": "top",
   "margin-top": 0,
   "margin-bottom": 0,
-
   "layer": "top",
   "height": 32,
   "exclusive": true,
   "mode": "dock",
   "spacing": 4,
-
-  "include": ["~/dot/.config/waybar/modules.json"],
-
+  "include": [
+    "~/dot/.config/waybar/modules.json"
+  ],
   "modules-left": [
     "hyprland/workspaces",
     "group/quicklinks"
   ],
-
   "modules-center": [],
-
   "modules-right": [
     "tray",
     "bluetooth",
@@ -26,9 +23,9 @@
     "custom/exit",
     "group/hardware",
     "hyprland/language",
-    "clock"
+    "clock",
+    "custom/notification"
   ],
-
   "group/quicklinks": {
     "orientation": "horizontal",
     "modules": [
@@ -36,9 +33,12 @@
       "custom/music"
     ]
   },
-
   "group/hardware": {
     "orientation": "horizontal",
-    "modules": ["disk", "cpu", "memory"]
+    "modules": [
+      "disk",
+      "cpu",
+      "memory"
+    ]
   }
 }
