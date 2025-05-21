@@ -55,3 +55,5 @@ case ":$PATH:" in
 esac
 # pnpm end
 export PATH=$PATH:/opt/datagrip/bin
+
+export SNACKS_GHOSTTY=true
