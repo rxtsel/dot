@@ -42,14 +42,17 @@ auto-format = true
 [[language]]
 name = "json"
 language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome" ]
+auto-format = true
 
 [[language]]
 name = "jsx"
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" , "tailwindcss-ls" ]
+auto-format = true
 
 [[language]]
 name = "tsx"
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" , "tailwindcss-ls" ]
+auto-format = true
 
 [[language]]
 name = "svelte"

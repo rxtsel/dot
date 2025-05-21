@@ -4,7 +4,11 @@ theme = "ayu_dark"
 true-color = true
 line-number = "relative"
 mouse = false
-bufferline = "always"
+bufferline = "multiple"
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
 
 [editor.cursor-shape]
 insert = "bar"
