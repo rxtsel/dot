@@ -1,11 +1,16 @@
-theme = "ayu_dark"
+theme = "solarized_osaka"
 
 [editor]
 true-color = true
+color-modes = true
 line-number = "relative"
 mouse = false
 bufferline = "multiple"
 end-of-line-diagnostics = "hint"
+# rulers = [80]
+
+[editor.file-picker]
+hidden = false
 
 [editor.inline-diagnostics]
 cursor-line = "warning"
@@ -15,8 +20,14 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.indent-guides]
+render = true
+character = "│" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
+C-s = [":write"]
 
 [keys.normal.space]
 l = [
@@ -27,5 +38,5 @@ l = [
   ":redraw",
   ":reload-all",
   ":set mouse false",
-  ":set mouse true",
+ ":set mouse true",
 ]
