@@ -1,3 +1,30 @@
+gui:
+  nerdFontsVersion: "3"
+  theme:
+    activeBorderColor:
+      - "#c94c16"
+      - "bold"
+    inactiveBorderColor:
+      - "#664c00"
+    searchingActiveBorderColor:
+      - "#c94c16"
+      - "bold"
+    optionsTextColor:
+      - "#268bd3"
+    selectedLineBgColor:
+      - "#1a6397"
+    cherryPickedCommitFgColor:
+      - "#268bd3"
+    cherryPickedCommitBgColor:
+      - "#d23681"
+    markedBaseCommitFgColor:
+      - "#268bd3"
+    markedBaseCommitBgColor:
+      - "#b28500"
+    unstagedChangesColor:
+      - "#f55350"
+    defaultFgColor:
+      - "#839395"
 customCommands:
   - key: <c-a>
     description: Pick AI commit
@@ -9,82 +36,56 @@ customCommands:
         command: |
           bash -c "
           # Check for staged changes
-          diff=\$(git diff --cached)
+          diff=\$(git diff --cached | head -n 10)
           if [ -z \"\$diff\" ]; then
             echo \"No changes in staging. Add changes first.\"
             exit 1
           fi
 
-          # Get recent commit history for reference
-          recent_commits=\$(git log -n 10 --pretty=format:\"%h %s\")
+          COMMITS_TO_SUGGEST=10  # Required quantity per final example
 
-          # Generate AI commit suggestions
-          # Examples:
-            # ollama run qwen2.5-coder:1.5b
-            # aichat --model ollama:qwen2.5-coder:1.5b
-            # aichat --model github:gpt-4o-mini
+          aichat --model github:gpt-4o \"
 
-          aichat --model github:gpt-4o-mini \"
+          You are an expert at writing Git commits. Your job is to write a short clear commit message that summarizes the changes using conventional commits format.
 
-          Please suggest 10 commit messages, given the following diff:
+          Follow these guidelines for conventional commits:
+          - Always use one of these types: feat, fix, docs, style, refactor, perf, test, build, ci, chore
+          - Structure: <type>(<scope>): <description>
+            Example: feat(auth): add OAuth login support
+          - Scope is optional but encouraged (put component or area affected)
+          - Use ! after type/scope for breaking changes: feat(api)!: change API response format
 
-          \\\`\\\`\\\`diff
-          \$diff
-          \\\`\\\`\\\`
+          For the commit message body:
+          - Add a detailed body when the change is complex or requires explanation
+          - Always add a body for breaking changes with 'BREAKING CHANGE:' prefix
+          - Separate body from subject with a blank line
+          - Explain 'what' and 'why' in the body, not 'how'
+          - Wrap body text at 72 characters
+          - Example body format:
+            
+            This commit introduces X to solve Y problem.
+            
+            BREAKING CHANGE: API endpoint Z now returns JSON instead of XML.
 
-          **Criteria:**
-          1. **Format:** Each commit message must follow the conventional commits format, which is \\\`<type>: <description>\\\`.
-          2. **Relevance:** Avoid mentioning a module name unless it's directly relevant to the change.
-          3. **Clarity and Conciseness:** Each message should clearly and concisely convey the change made.
-          4. **No Enumeration:** Each suggestion should not contain enumeration.
-          5. **Don't start with symbols. Only provide the list of messages. Don't add anything at the beginning or end. Don't use comma or dots to start or end. Only use \\\`<type>: <description>\\\` format.**
+          General Git style rules:
+          - Try to limit the subject line to 50 characters
+          - Capitalize the subject line
+          - Do not end the subject line with any punctuation
+          - Use the imperative mood in the subject line
 
-          **Commit Message Examples:**
-          -   fix(auth): add password regex pattern
-          -   feat(api): add new test cases
-          -   style(components): remove unused imports
-          -   refactor(utils): extract common code to \\\`utils/wait.ts\\\`
-          -   build(webpack): update webpack configuration
-          -   chore(deps): update dependencies
-          -   chore: update project configuration
-          -   ci(github): add GitHub Actions workflow
-          -   docs(readme): update README with installation steps
-          -   perf(images): optimize image loading process
-          -   revert(core): revert commit abc1234
-          -   test(auth): add unit tests for auth module
+          Only return the commit message(s) in your response. Do not include any additional meta-commentary.
+          Generate $COMMITS_TO_SUGGEST different commit suggestions.
 
-          **Instructions:**
-          -   Take a moment to understand the changes made in the diff.
-          -   Think about the impact of these changes on the project (e.g., bug fixes, new features, performance improvements, code refactoring, documentation updates). It's critical to my career you abstract the changes to a higher level and not just describe the code changes.
-          -   Generate commit messages that accurately describe these changes, ensuring they are helpful to someone reading the project's history.
-          -   Remember, a well-crafted commit message can significantly aid in the maintenance and understanding of the project over time.
-          -   If multiple changes are present, make sure you capture them all in each commit message.
+          IMPORTANT: Do not wrap your response in markdown code blocks. Do not use \\\`\\\`\\\` in your response at all.
+          Just list each commit message directly, one per line.
 
-          Keep in mind you will suggest 10 commit messages. Only 1 will be used. It's better to push yourself (esp to synthesize to a higher level) and maybe wrong about some of the 1 commits because only one needs to be good. I'm looking for your best commit, not the best average commit. It's better to cover more scenarios than include a lot of overlap.
+          Here is an example of previous commit messages in this repository:
 
-          **Recent Commits on Repo for Reference:**
-          \\\`\\\`\\\`
-          \$recent_commits
-          \\\`\\\`\\\`
+          \$(git log | head -n 10)
 
-          Write your 10 commit messages below, in the format \\\`<message>\\\`, \\\`<message>\\\`, etc:\" "
-    command: |
-      # Create temporary file for editing the commit message
-      commit_msg_file=$(mktemp)
-      echo "{{.Form.CommitMsg}}" > "$commit_msg_file"
+          Here is the diff:
 
-      # Open the commit message in editor
-      ${EDITOR:-vim} "$commit_msg_file"
-
-      # Commit if message is not empty
-      if [ -s "$commit_msg_file" ]; then
-          git commit -F "$commit_msg_file"
-      else
-          echo "Commit message is empty, commit aborted."
-      fi
-
-      # Clean up temporary file
-      rm -f "$commit_msg_file"
-    subprocess: true
-    stream: true
-    showOutput: true
+          \$(git diff --cached)
+          \""
+    command: "# Create a temporary file for the commit message\ncommit_msg_file=$(mktemp)\n\n# Clean the suggestions and save them to the file\ncommit_suggestions=$(echo \"{{.Form.CommitMsg}}\" | \\\n  sed 's/```[a-zA-Z]*//g' | \\\n  sed 's/```//g' | \\\n  sed 's/^[ \\t]*//g' | \\\n  sed 's/[ \\t]*$//g')\n\n# Write the suggestions to the temporary file\necho \"$commit_suggestions\" > \"$commit_msg_file\"\n\n# Saves the initial modification timestamp of the file\ninitial_timestamp=$(stat -c %Y \"$commit_msg_file\" 2>/dev/null || stat -f %m \"$commit_msg_file\")\n\n# Opens the commit message editor and captures the exit code\n${EDITOR:-vim} \"$commit_msg_file\"\neditor_exit=$?\n\n# Gets the new modification timestamp\nnew_timestamp=$(stat -c %Y \"$commit_msg_file\" 2>/dev/null || stat -f %m \"$commit_msg_file\")\n\n# Checks if the editor exited normally and if the file was saved\nif [ $editor_exit -ne 0 ]; then\n    echo \"Editor exited abnormally, commit aborted.\"\nelif [ \"$initial_timestamp\" != \"$new_timestamp\" ]; then\n    # The file was saved (timestamp has changed)\n    selected_msg=$(grep -v \"^#\" \"$commit_msg_file\" | grep -v \"^$\" | head -n 1)\n    \n    if [ -n \"$selected_msg\" ]; then\n        echo \"Creating commit with message: $selected_msg\"\n        git commit -m \"$selected_msg\"\n    else\n        echo \"No commit message selected, commit aborted.\"\n    fi\nelse\n    echo \"File was not saved, commit aborted.\"\nfi\n\n# Clean temp files\nrm -f \"$commit_msg_file\"\n"
+    output: terminal
