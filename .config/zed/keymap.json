@@ -1,15 +1,61 @@
 [
-  // Global
   {
-    "context": "Workspace",
+    "context": "(EmptyPane || SharedScreen) || Editor && vim_mode == normal && !VimWaiting",
     "bindings": {
-      "ctrl-`": "workspace::ToggleBottomDock",
-      "\\ \\": "tab_switcher::Toggle",
-      "alt-q": "pane::CloseActiveItem",
-      "ctrl-b": "workspace::ToggleRightDock"
+      "space space": "file_finder::Toggle",
+      "space e": "project_panel::ToggleFocus"
     }
   },
-  // File panel (netrw)
+  {
+    "context": "(Workspace || Editor) && vim_mode == normal && !VimWaiting",
+    "bindings": {
+      "space w q": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "Workspace || Editor",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && vim_operator == none && !VimWaiting",
+    "bindings": {
+      "space o": "outline_panel::ToggleFocus",
+      "space u n": "workspace::ClearAllNotifications",
+      "space t": "workspace::ToggleBottomDock",
+      "space a i": "assistant::InlineAssist",
+      "space a a": "agent::ToggleFocus",
+      "space g g": [
+        "task::Spawn",
+        { "task_name": "Lazygit", "reveal_target": "center" }
+      ]
+    }
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "escape escape": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "OutlinePanel",
+    "bindings": {
+      "ctrl-w c": "workspace::ToggleLeftDock",
+      "escape escape": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "OutlinePanel && not_editing",
+    "bindings": {
+      "ctrl-w c": "workspace::ToggleLeftDock",
+      "space o": "workspace::ToggleLeftDock",
+      "q": "workspace::ToggleLeftDock"
+    }
+  },
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
@@ -20,24 +66,12 @@
       "x": "project_panel::Cut",
       "y": "project_panel::Copy",
       "p": "project_panel::Paste",
-      // Close
+      "ctrl-w c": "workspace::ToggleRightDock",
       "space e": "workspace::ToggleRightDock",
-      "q": "workspace::ToggleRightDock"
+      "q": "workspace::ToggleRightDock",
+      "escape escape": "workspace::ToggleRightDock"
     }
   },
-  // Surround. Select word and press shift-s and add the surround
-  {
-    "context": "vim_mode == visual",
-    "bindings": {
-      "shift-s": [
-        "vim::PushOperator",
-        {
-          "AddSurrounds": {}
-        }
-      ]
-    }
-  },
-  // Terminal
   {
     "context": "Terminal",
     "bindings": {
@@ -46,131 +80,11 @@
       "ctrl-w z": "workspace::ToggleZoom"
     }
   },
-  // Visual or normal mode
   {
-    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "context": "AgentPanel",
     "bindings": {
-      // Git
-      "space g h d": "editor::ToggleHunkDiff",
-      "space g h r": "editor::RevertSelectedHunks",
-      "space g b": "editor::ToggleGitBlame",
-      // Toggle inlay hints
-      "space t i": "editor::ToggleInlayHints",
-      // Toggle indent guides
-      "space i g": "editor::ToggleIndentGuides",
-      // Toggle soft wrap
-      "space u w": "editor::ToggleSoftWrap",
-      // Toggle Zen mode
-      "space c z": "workspace::ToggleCenteredLayout",
-      // Open markdown preview
-      "space m p": "markdown::OpenPreviewToTheSide",
-      // Open recent project
-      "; o": "projects::OpenRecent",
-      // Search word under cursor
-      "; w": "pane::DeploySearch",
-      // Chat with AI
-      "space a c": "assistant::ToggleFocus",
-      // Go to file with `gf`
-      "g f": "editor::OpenExcerpts"
-    }
-  },
-  // Normal mode
-  {
-    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
-    "bindings": {
-      // Move between panes
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      // LSP
-      "space c a": "editor::ToggleCodeActions",
-      "space c r": "editor::Rename",
-      "space .": "editor::ToggleCodeActions",
-      "g d": "editor::GoToDefinition",
-      "g D": "editor::GoToDefinitionSplit",
-      "g i": "editor::GoToImplementation",
-      "g I": "editor::GoToImplementationSplit",
-      "g t": "editor::GoToTypeDefinition",
-      "g T": "editor::GoToTypeDefinitionSplit",
-      "g r": "editor::FindAllReferences",
-      "] d": "editor::GoToDiagnostic",
-      "[ d": "editor::GoToPrevDiagnostic",
-      "shift-k": "editor::Hover",
-      // TODO: Go to next/prev error
-      "] e": "editor::GoToDiagnostic",
-      "[ e": "editor::GoToPrevDiagnostic",
-      // Symbol search
-      "space s s": "outline::Toggle",
-      "space s S": "project_symbols::Toggle",
-      // Diagnostic
-      "space x x": "diagnostics::Deploy",
-      // Git prev/next hunk
-      "] h": "editor::GoToHunk",
-      "[ h": "editor::GoToPrevHunk",
-      // Switch between buffers
-      "shift-h": "pane::ActivatePrevItem",
-      "shift-l": "pane::ActivateNextItem",
-      // Close active panel
-      "space q": "pane::CloseActiveItem",
-      "space b d": "pane::CloseActiveItem",
-      // Close other items
-      "space b o": "pane::CloseInactiveItems",
-      // Save file
-      "ctrl-s": "workspace::Save",
-      "space w": "workspace::Save",
-      "; f": "file_finder::Toggle",
-      // Show project panel with current file
-      "space e": "pane::RevealInProjectPanel",
-      // Split panes
-      "s v": "pane::SplitRight",
-      "s s": "pane::SplitDown",
-      // Open lazygit
-      "space g g": ["task::Spawn", { "task_name": "Lazygit" }]
-    }
-  },
-  // Empty pane, set of keybindings that are available when there is no active editor
-  {
-    "context": "EmptyPane || SharedScreen",
-    "bindings": {
-      // Open file finder
-      "; f": ["file_finder::Toggle", { "separate_history": true }],
-      // Open recent project
-      "; o": "projects::OpenRecent"
-    }
-  },
-  // Better escape
-  {
-    "context": "Editor && vim_mode == insert && !menu",
-    "bindings": {
-      "j j": "vim::NormalBefore", // remap jj in insert mode to escape
-      "j k": "vim::NormalBefore" // remap jk in insert mode to escape
-    }
-  },
-  // Rename
-  {
-    "context": "Editor && vim_operator == c",
-    "bindings": {
-      "c": "vim::CurrentLine",
-      "r": "editor::Rename" // zed specific
-    }
-  },
-  // Code Action
-  {
-    "context": "Editor && vim_operator == c",
-    "bindings": {
-      "c": "vim::CurrentLine",
-      "a": "editor::ToggleCodeActions" // zed specific
-    }
-  },
-  // Panel nagivation
-  {
-    "context": "Dock",
-    "bindings": {
-      "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
+      "ctrl-w c": "workspace::ToggleRightDock",
+      "escape escape": "workspace::ToggleRightDock"
     }
   }
 ]
