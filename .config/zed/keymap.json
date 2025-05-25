@@ -1,19 +1,5 @@
 [
   {
-    "context": "(EmptyPane || SharedScreen) || Editor && vim_mode == normal && !VimWaiting",
-    "bindings": {
-      "space space": "file_finder::Toggle",
-      "space e": "project_panel::ToggleFocus"
-    }
-  },
-  {
-    "context": "(Workspace || Editor) && vim_mode == normal && !VimWaiting",
-    "bindings": {
-      "space w q": "pane::CloseActiveItem"
-    }
-  },
-  {
-    "context": "Workspace || Editor",
     "bindings": {
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-j": "workspace::ActivatePaneDown",
@@ -22,13 +8,32 @@
     }
   },
   {
-    "context": "Editor && vim_mode == normal && vim_operator == none && !VimWaiting",
+    "context": "(EmptyPane || SharedScreen)",
     "bindings": {
-      "space o": "outline_panel::ToggleFocus",
+      "space e": "project_panel::ToggleFocus",
+      "space space": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "m m": "vim::Matching"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && vim_operator == none && !VimWaiting && !menu",
+    "bindings": {
+      "space o o": "outline_panel::ToggleFocus",
+      "space o s": "project_symbols::Toggle",
       "space u n": "workspace::ClearAllNotifications",
       "space t": "workspace::ToggleBottomDock",
       "space a i": "assistant::InlineAssist",
       "space a a": "agent::ToggleFocus",
+      "space x": "diagnostics::Deploy",
+      "space space": "file_finder::Toggle",
+      "space e": "project_panel::ToggleFocus",
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
       "space g g": [
         "task::Spawn",
         { "task_name": "Lazygit", "reveal_target": "center" }
@@ -59,17 +64,19 @@
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
-      "z": "outline_panel::CollapseAllEntries",
       "a": "project_panel::NewFile",
       "d": "project_panel::Delete",
       "r": "project_panel::Rename",
       "x": "project_panel::Cut",
       "y": "project_panel::Copy",
       "p": "project_panel::Paste",
+      "z": "project_panel::CollapseAllEntries",
       "ctrl-w c": "workspace::ToggleRightDock",
-      "space e": "workspace::ToggleRightDock",
       "q": "workspace::ToggleRightDock",
-      "escape escape": "workspace::ToggleRightDock"
+      "escape escape": "workspace::ToggleRightDock",
+      "space": null,
+      "space e": "workspace::ToggleRightDock",
+      "enter": ["workspace::SendKeystrokes", "enter space e"]
     }
   },
   {

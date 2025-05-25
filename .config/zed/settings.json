@@ -1,10 +1,13 @@
 {
   "vim_mode": true,
   "relative_line_numbers": true,
-  "ui_font_size": 20,
-  "buffer_font_size": 20,
+  "ui_font_size": 18,
+  "buffer_font_size": 18,
+  "agent_font_size": 18,
   "ui_font_family": "CaskaydiaCove Nerd Font",
   "buffer_font_family": "CaskaydiaCove Nerd Font",
+  "ui_font_fallbacks": ["Zed Plex Mono"],
+  "buffer_font_fallbacks": ["Zed Plex Mono"],
   "buffer_line_height": "standard",
   "restore_on_startup": "last_session",
   "auto_install_extensions": {
@@ -59,7 +62,7 @@
   "theme": {
     "mode": "system",
     "light": "Ayu Light",
-    "dark": "Ayu Dark"
+    "dark": "Solarized Dark"
   },
   "project_panel": {
     "button": false,
@@ -75,8 +78,8 @@
     "button": true,
     "model_parameters": [],
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4.1"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-thinking-latest"
     },
     "version": "2"
   },
