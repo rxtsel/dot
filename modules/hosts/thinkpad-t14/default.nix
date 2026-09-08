@@ -29,7 +29,11 @@
       virtualization
       acpiDdnt
       (
-        {config, ...}: let
+        {
+          config,
+          pkgs,
+          ...
+        }: let
           user = config.preferences.user.name;
         in {
           networking.hostName = "thinkpad-t14";
@@ -54,6 +58,15 @@
           # Mount bus
           services.udisks2.enable = true;
           services.gvfs.enable = true;
+          # Print
+          services.printing = {
+            enable = true;
+            drivers = with pkgs; [
+              gutenprint
+              epson-escpr
+              epson-201401w
+            ];
+          };
 
           nixpkgs.config.allowUnfree = true;
 
