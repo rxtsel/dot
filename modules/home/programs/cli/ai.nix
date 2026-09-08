@@ -239,6 +239,7 @@
       - Commit each group separately.
       - Use lowercase commit messages so commitlint passes.
       - Do not guess. Understand every available change before committing.
+      - If errors occur, do not fix them. Only report them at the end. Limit yourself to the commits.
 
       Steps:
       1. Inspect repository state with \`git status --short\`, \`git diff --cached\`, \`git diff\`, and \`git ls-files --others --exclude-standard\`.
